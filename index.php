@@ -1,5 +1,9 @@
 <?php
     include 'conexion.php';
+
+    $connect = mysqli_connect("localhost", "root", "", "sin_cita");
+    $query = "SELECT * FROM ORDER BY id ASC";
+    $result = mysqli_query($connect, $query);
 ?>
 
 <!doctype html>
@@ -40,7 +44,17 @@
 
         <h1 class="container-lg h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
-        <table class="table table-bordered border-dark table-hover text-center" id="table">
+        <table class="table table-bordered border-dark table-hover text-center">
+
+        <?php
+
+        while($row = mysql_fetch_array($result)){
+
+            echo '<tr><th>%s</th></tr>', $row["HORA"]
+
+        }
+
+        ?>
 
         </table>
 
