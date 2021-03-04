@@ -2,7 +2,7 @@
     include 'conexion.php';
 
     $connect = mysqli_connect("localhost", "root", "", "sin_cita");
-    $query = "SELECT * FROM ORDER BY id ASC";
+    $query = "SELECT * FROM horarios";
     $result = mysqli_query($connect, $query);
 ?>
 
@@ -48,11 +48,17 @@
 
         <?php
 
-        while($row = mysql_fetch_array($result)){
+        if(!$result) 
+        die("Error: no se pudo realizar la consulta");
+        echo "Error: no se pudo realizar la consulta";
 
-            echo '<tr><th>%s</th></tr>', $row["HORA"]
+        while($row = mysql_fetch_array($result, MYSQL_NUM)){
+
+            echo '<tr><th>%s</th><td>$s</td></tr>', $row[0], $row[1];
 
         }
+        $result -> free_result();
+        $mysqli -> close();
 
         ?>
 
