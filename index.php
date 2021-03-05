@@ -47,19 +47,18 @@
         <table class="table table-bordered border-dark table-hover text-center">
 
         <?php
+            while($row = mysqli_fetch_array($result))
+            {
+        ?>
+            <tr>
+                <td><?php echo ($row['hora']);?></td>
+                <td><button type='button' class='btn btn-outline-dark' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='" + el + "'>Llamar</button></td>
+                <td><button type='button' class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
+                <td><button type='button' class='btn btn-outline-danger'>Eliminar</button></td>
 
-        if(!$result) 
-        die("Error: no se pudo realizar la consulta");
-        echo "Error: no se pudo realizar la consulta";
-
-        while($row = mysql_fetch_array($result, MYSQL_NUM)){
-
-            echo '<tr><th>%s</th><td>$s</td></tr>', $row[0], $row[1];
-
-        }
-        $result -> free_result();
-        $mysqli -> close();
-
+            </tr>
+        <?php
+            }
         ?>
 
         </table>
