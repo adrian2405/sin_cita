@@ -50,12 +50,14 @@
             while($row = mysqli_fetch_array($result))
             {
         ?>
+        <form method="POST" action="index.php">
             <tr>
                 <th scope="col"><?php echo ($row['hora']);?></th>
                 <td><button type='button' class='btn btn-outline-dark' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='" + el + "'>Llamar</button></td>
                 <td><button type='button' class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
-                <td><a class="btn btn-outline.danger" value="Eliminar" href="index.php? id=<?php echo $row["hora"]; ?>"> Eliminar</a></td>
+                <td><a class="btn btn-outline-danger" href="index.php? id=<?php echo $row["hora"]; ?>"> Eliminar</a></td>
             </tr>
+        </form>
         <?php
             }
         ?>
