@@ -1,9 +1,29 @@
 <?php
-    include 'conexion.php';
+
+    include("conexion.php");
+    include("funciones.php");
 
     $connect = mysqli_connect("localhost", "root", "", "sin_cita");
     $query = "SELECT * FROM horarios";
     $result = mysqli_query($connect, $query);
+
+    if(isset($_POST['submit'])){
+
+        $delete = "DELETE FROM horarios";
+
+        $result = mysqli_query($connect, $delete);
+
+        header("location:index.php");
+
+        $sql = "INSERT INTO horarios (hora) VALUES ('9:00'),('9:15'),('9:30'),('9:45'),('10:00'),('10:15'),('10:30'),('10:45'),
+        ('11:00'),('11:15'),('11:30'),('11:45'),('12:00'),('12:15'),('12:30'),('12:45'),('13:00'),('13:15'),('13:30'),('13:45'),
+        ('14:00'),('14:15'),('14:30'),('14:45'),('15:00'),('15:15'),('15:30'),('15:45'),('16:00'),('16:15'),('16:30'),('16:45'),
+        ('17:00'),('17:15'),('17:30'),('17:45'),('18:00');";
+
+        $result = mysqli_query($connect, $sql);
+        header("location:index.php");
+    }
+
 ?>
 
 <!doctype html>
@@ -44,20 +64,22 @@
 
         <h1 class="container-lg h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
+        <form method="POST" action="">
+        <input type="submit" name="submit" value="Resetear" class="btn btn-outline-primary"/>
+        </form>
+
         <table class="table table-bordered border-dark table-hover text-center">
 
         <?php
             while($row = mysqli_fetch_array($result))
             {
         ?>
-        <form method="POST" action="index.php">
             <tr>
                 <th scope="col"><?php echo ($row['hora']);?></th>
-                <td><button type='button' class='btn btn-outline-dark' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='" + el + "'>Llamar</button></td>
+                <td><button type='button' class='btn btn-outline-dark' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='<?php echo ($row['hora']);?>'>Llamar</button></td>
                 <td><button type='button' class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
-                <td><a class="btn btn-outline-danger" href="index.php? id=<?php echo $row["hora"];?>"> Eliminar</a></td>
+                <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
             </tr>
-        </form>
         <?php
             }
             //https://www.baulphp.com/insertar-editar-eliminar-registros-con-funcion-php-mysqli/
