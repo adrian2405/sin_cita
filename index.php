@@ -1,4 +1,6 @@
 <?php
+            //https://www.baulphp.com/insertar-editar-eliminar-registros-con-funcion-php-mysqli/
+            //Revisar para las funciones
 
     include("conexion.php");
     include("funciones.php");
@@ -71,7 +73,7 @@
 
         <button type="button" class="btn btn-outline-secondary" onclick="location.reload();">Refrescar</button>
 
-        <table class="table table-bordered border-dark table-hover text-center">
+        <table class="table table-bordered border-dark table-hover text-center" id="example">
 
         <?php
             while($row = mysqli_fetch_array($result))
@@ -85,8 +87,7 @@
             </tr>
         <?php
             }
-            //https://www.baulphp.com/insertar-editar-eliminar-registros-con-funcion-php-mysqli/
-            //Revisar para las funciones
+
         ?>
 
         </table>
