@@ -12,11 +12,9 @@
             $delete = "DROP TABLE horarios";
             $result = mysqli_query($connect, $delete);
 
-        $create = "CREATE TABLE horarios (id INT PRIMARY KEY, hora VARCHAR(20))";
+        $create = "CREATE TABLE horarios (id INT PRIMARY KEY AUTO_INCREMENT, hora VARCHAR(20))";
 
         $result = mysqli_query($connect, $create);
-
-        header("location:index.php");
 
         $sql = "INSERT INTO horarios (hora) VALUES ('9:00'),('9:15'),('9:30'),('9:45'),('10:00'),('10:15'),('10:30'),('10:45'),
         ('11:00'),('11:15'),('11:30'),('11:45'),('12:00'),('12:15'),('12:30'),('12:45'),('13:00'),('13:15'),('13:30'),('13:45'),
@@ -70,6 +68,8 @@
         <form method="POST" action="">
         <input type="submit" name="submit" value="Resetear" class="btn btn-outline-primary"/>
         </form>
+
+        <button type="button" class="btn btn-outline-secondary" onclick="location.reload();">Refrescar</button>
 
         <table class="table table-bordered border-dark table-hover text-center">
 
