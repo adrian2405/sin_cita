@@ -9,9 +9,12 @@
 
     if(isset($_POST['submit'])){
 
-        $delete = "DELETE FROM horarios";
+            $delete = "DROP TABLE horarios";
+            $result = mysqli_query($connect, $delete);
 
-        $result = mysqli_query($connect, $delete);
+        $create = "CREATE TABLE horarios (id INT PRIMARY KEY, hora VARCHAR(20))";
+
+        $result = mysqli_query($connect, $create);
 
         header("location:index.php");
 
