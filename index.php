@@ -9,7 +9,7 @@
     $query = "SELECT * FROM horarios";
     $result = mysqli_query($connect, $query);
 
-    if(isset($_POST['submit'])){
+    if(isset($_POST['reset'])){
 
             $delete = "DROP TABLE horarios";
             $result = mysqli_query($connect, $delete);
@@ -67,13 +67,15 @@
 
         <h1 class="container-lg h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
-        <form method="POST" action="">
-        <input type="submit" name="submit" value="Resetear" class="btn btn-outline-primary"/>
-        </form>
+        <form method="POST" action="" class="text-center m-3">
+        <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary"/>
+        <a class="btn btn-outline-info" href="info.php"> Ir a info</a>
 
         <button type="button" class="btn btn-outline-secondary" onclick="location.reload();">Refrescar</button>
+        </form>
 
         <table class="table table-bordered border-dark table-hover text-center" id="example">
+
 
         <?php
             while($row = mysqli_fetch_array($result))
@@ -81,15 +83,14 @@
         ?>
             <tr>
                 <th scope="col"><?php echo ($row['hora']);?></th>
-                <td><button type='button' class='btn btn-outline-dark' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='<?php echo ($row['hora']);?>'>Llamar</button></td>
-                <td><button type='button' class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
+                <td><a class="btn btn-outline.dark" href="info.php?llamada=<?php echo $row["hora"];?>">Llamar</a></td>
+                <td><button type='button' name="sincita" class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
                 <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
             </tr>
         <?php
             }
 
         ?>
-
         </table>
 
     </div>
