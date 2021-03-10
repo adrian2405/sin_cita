@@ -9,13 +9,11 @@
     $query = "SELECT * FROM horarios";
     $result = mysqli_query($connect, $query);
 
-        if(isset($_GET['llamada'])){
+        if(isset($_GET['row'])){
 
-            $llama = $_GET['llamada'];
+            $llama = $_GET['row'];
 
-            echo'<script type="text/javascript">
-                    alert("$llama");
-                </script>';
+            echo $llama;
 
         }
 
@@ -27,9 +25,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="refresh" content="16" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
-    <title>Cita previa ProMac</title>
+    <title>Información</title>
 </head>
 
 <body>
