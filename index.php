@@ -61,9 +61,9 @@
                 <th scope="col"><?php echo ($row['hora']);?></th>
 
                 <!-- Pendiente modificar botones para que envíen las variables a info.php -->
-                
-                <td><input type='button' name="hora" id="hora" value="Llamar" class='btn btn-outline-secondary'/></td>
-                <td><button type='button' name="sincita" class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
+
+                <td><button type='button' class='btn btn-outline-secondary'>Atender</button></td>
+                <td><button type='button' class='btn btn-outline-secondary'>Sin cita</button></td>
                 <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
             </tr>
         <?php
