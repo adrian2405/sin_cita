@@ -1,29 +1,26 @@
 <?php
-            //https://www.baulphp.com/insertar-editar-eliminar-registros-con-funcion-php-mysqli/
-            //Revisar para las funciones
 
-    include("conexion.php");
-    include("funciones.php");
+    include "conexion.php";
+    include "funciones.php";
 
-    $connect = mysqli_connect("localhost", "root", "", "sin_cita");
     $query = "SELECT * FROM horarios";
-    $result = mysqli_query($connect, $query);
+    $result = mysqli_query($conn, $query);
 
     if(isset($_POST['reset'])){
 
             $delete = "DROP TABLE horarios";
-            $result = mysqli_query($connect, $delete);
+            $result = mysqli_query($conn, $delete);
 
         $create = "CREATE TABLE horarios (id INT PRIMARY KEY AUTO_INCREMENT, hora VARCHAR(20))";
 
-        $result = mysqli_query($connect, $create);
+        $result = mysqli_query($conn, $create);
 
         $sql = "INSERT INTO horarios (hora) VALUES ('9:00'),('9:15'),('9:30'),('9:45'),('10:00'),('10:15'),('10:30'),('10:45'),
         ('11:00'),('11:15'),('11:30'),('11:45'),('12:00'),('12:15'),('12:30'),('12:45'),('13:00'),('13:15'),('13:30'),('13:45'),
         ('14:00'),('14:15'),('14:30'),('14:45'),('15:00'),('15:15'),('15:30'),('15:45'),('16:00'),('16:15'),('16:30'),('16:45'),
         ('17:00'),('17:15'),('17:30'),('17:45'),('18:00');";
 
-        $result = mysqli_query($connect, $sql);
+        $result = mysqli_query($conn, $sql);
         header("location:index.php");
     }
 
@@ -41,27 +38,6 @@
 </head>
 
 <body>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title" id="exampleModalLabel"></h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form>
-                        <div class="mb-3 h1">
-                            <input type="text" class="form-control text-center" id="recipient-name" readonly>
-                        </div>
-                    </form>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary text-center" data-bs-dismiss="modal">OK</button>
-                </div>
-            </div>
-        </div>
-    </div>
 
     <div class="container-lg">
 
@@ -83,6 +59,9 @@
         ?>
             <tr>
                 <th scope="col"><?php echo ($row['hora']);?></th>
+
+                <!-- Pendiente modificar botones para que envíen las variables a info.php -->
+                
                 <td><input type='button' name="hora" id="hora" value="Llamar" class='btn btn-outline-secondary'/></td>
                 <td><button type='button' name="sincita" class='btn btn-outline-secondary' data-bs-toggle='modal' data-bs-target='#exampleModal' data-bs-whatever='Sin cita por orden de llegada'>Sin cita</button></td>
                 <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
@@ -94,40 +73,8 @@
         </table>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-    $('#hora').click( function() {
-        $.ajax(
-                {
-                    url: 'info.php?row=<?php echo $row["hora"];?>',
-                    success: function( data ) {
-
-                    }
-                }
-            )
-        }
-    );
-    </script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
-    <script>
-        var exampleModal = document.getElementById('exampleModal')
-        exampleModal.addEventListener('show.bs.modal', function(event) {
-            // Button that triggered the modal
-            var button = event.relatedTarget
-                // Extract info from data-bs-* attributes
-            var recipient = button.getAttribute('data-bs-whatever')
-                // If necessary, you could initiate an AJAX request here
-                // and then do the updating in a callback.
-                //
-                // Update the modal's content.
-            var modalTitle = exampleModal.querySelector('.modal-title')
-            var modalBodyInput = exampleModal.querySelector('.modal-body input')
-
-            modalTitle.textContent = 'Siguiente: ' + recipient
-            modalBodyInput.value = 'Siguiente: ' + recipient
-        })
-    </script>
 </body>
 
 </html>

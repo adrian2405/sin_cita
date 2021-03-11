@@ -1,21 +1,10 @@
 <?php
-            //https://www.baulphp.com/insertar-editar-eliminar-registros-con-funcion-php-mysqli/
-            //Revisar para las funciones
 
-    include("conexion.php");
-    include("funciones.php");
+    include "conexion.php";
+    include "funciones.php";
 
-    $connect = mysqli_connect("localhost", "root", "", "sin_cita");
     $query = "SELECT * FROM horarios";
-    $result = mysqli_query($connect, $query);
-
-        if(isset($_GET['row'])){
-
-            $llama = $_GET['row'];
-
-            echo $llama;
-
-        }
+    $result = mysqli_query($conn, $query);
 
 ?>
 
