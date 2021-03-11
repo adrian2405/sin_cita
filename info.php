@@ -1,5 +1,7 @@
 <?php
 
+    //Esta página tiene refresco cada 16 segundos - Línea 19
+
     include "conexion.php";
     include "funciones.php";
 

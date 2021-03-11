@@ -1,5 +1,7 @@
 <?php
 
+// De momento aqui sólo se usa la función delete.
+
 function db_query($query) {
     $connection = mysqli_connect("localhost","root","","sin_cita");
     $result = mysqli_query($connection,$query);

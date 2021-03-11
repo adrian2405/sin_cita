@@ -6,6 +6,8 @@
     $query = "SELECT * FROM horarios";
     $result = mysqli_query($conn, $query);
 
+    //Función resetear que borra la tabla y la vuelve a crear insertando de nuevo los valores
+
     if(isset($_POST['reset'])){
 
             $delete = "DROP TABLE horarios";
@@ -43,6 +45,8 @@
 
         <h1 class="container-lg h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
+        <!-- Botones resetear, ir a info y refrescar -->
+
         <form method="POST" action="" class="text-center m-3">
         <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary"/>
         <a class="btn btn-outline-info" href="info.php"> Ir a info</a>
@@ -54,6 +58,9 @@
 
 
         <?php
+
+            //Función que recorre la tabla de la base de datos y lo muestra en una tabla html
+
             while($row = mysqli_fetch_array($result))
             {
         ?>
