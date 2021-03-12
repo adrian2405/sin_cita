@@ -24,5 +24,3 @@ function select_id($tblname,$field_name,$field_id){
     return $sql;
 
 }
-
-?>
