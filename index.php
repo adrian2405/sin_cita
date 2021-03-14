@@ -1,5 +1,7 @@
 <?php
 
+/*
+
     include "conexion.php";
     include "funciones.php";
 
@@ -26,7 +28,19 @@
         header("location:index.php");
     }
 
+
+
+*/
+
 ?>
+
+
+
+
+
+
+
+
 
 <!doctype html>
 <html lang="en">
@@ -48,40 +62,117 @@
         <!-- Botones resetear, ir a info y refrescar -->
 
         <form method="POST" action="" class="text-center m-3">
-        <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary"/>
+        <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary" />
         <a class="btn btn-outline-info" href="info.php"> Ir a info</a>
 
         <button type="button" class="btn btn-outline-secondary" onclick="location.reload();">Refrescar</button>
         </form>
 
+
+
+
+
+
+
         <table class="table table-bordered border-dark table-hover text-center" id="example">
 
 
-        <?php
 
-            //Función que recorre la tabla de la base de datos y lo muestra en una tabla html
 
-            while($row = mysqli_fetch_array($result))
-            {
-        ?>
-            <tr>
-                <th scope="col"><?php echo ($row['hora']);?></th>
-
-                <!-- Pendiente modificar botones para que envíen las variables a info.php -->
-
-                <td><button type='button' class='btn btn-outline-secondary'>Atender</button></td>
-                <td><button type='button' class='btn btn-outline-secondary'>Sin cita</button></td>
-                <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
-            </tr>
-        <?php
-            }
-
-        ?>
         </table>
 
+
+
+
+
+
+
+
+
+
+
+
     </div>
+
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+
+
+
+
+
+
+
 </body>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    
+    var contenido = document.querySelector('#example');
+
+
+
+    function inicio(){
+
+    window.setInterval(traer(), 3000);
+
+}
+
+
+            function traer (){
+
+                fetch('./data.php')
+                .then(res => res.json())
+                .then(data => {tabla(data)});
+
+            
+            }
+
+
+            function tabla (data){
+
+                console.log('hola');
+
+                contenido.innerHTML = ''
+                for(let valor of data){
+
+                        contenido.innerHTML += `
+
+                        <tr>
+                        <th scope="col">  ${valor.hora}  </th>
+                        </tr>
+
+                        `
+                }
+
+              
+                window.setInterval(traer(), 3000);
+
+            }
+
+
+
+
+
+         
+         
+traer();
+
+
+
+</script>
+
+
 
 </html>

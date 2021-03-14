@@ -8,3 +8,5 @@
     echo json_encode(
     mysqli_fetch_all($result, MYSQLI_ASSOC)
     );
+
+    
