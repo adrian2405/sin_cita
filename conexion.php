@@ -1,6 +1,6 @@
 <?php
     $servername = "localhost";
-    $database = "proMacTurnos";
+    $database = "sin_cita";
     $username = "root";
     $password = "";
     // Create connection

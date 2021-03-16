@@ -1,6 +1,5 @@
 <?php
 
-/*
 
     include "conexion.php";
     include "funciones.php";
@@ -28,10 +27,6 @@
         header("location:index.php");
     }
 
-
-
-*/
-
 ?>
 
 
@@ -57,29 +52,69 @@
 
     <div class="container-lg">
 
-        <h1 class="container-lg h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
+    <div class="row justify-content-center">
+
+    <div class="col-12">
+
+        <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
         <!-- Botones resetear, ir a info y refrescar -->
 
         <form method="POST" action="" class="text-center m-3">
         <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary" />
         <a class="btn btn-outline-info" href="info.php"> Ir a info</a>
-
-        <button type="button" class="btn btn-outline-secondary" onclick="location.reload();">Refrescar</button>
         </form>
 
+    </div>
 
 
 
 
 
 
-        <table class="table table-bordered border-dark table-hover text-center" id="example">
+        <div class="col-4">
+        <table class="table table-bordered border-dark text-center" id="example">
+
 
 
 
 
         </table>
+
+        </div>
+
+        <div class="col-8">
+
+        <table class="table table-bordered border-dark text-center" id="example_2">
+
+        <?php
+
+        //Función que recorre la tabla de la base de datos y lo muestra en una tabla html
+
+        while($row = mysqli_fetch_array($result))
+        {
+        ?>
+            <tr>
+
+            <!-- Pendiente modificar botones para que envíen las variables a info.php -->
+
+            <td><button type='button' class='btn btn-outline-secondary'>Atender</button></td>
+            <td><button type='button' class='btn btn-outline-secondary'>Sin cita</button></td>
+            <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
+            </tr>
+        <?php
+        }
+
+        ?>
+
+
+
+        </table>
+
+        </div>
+
+
+        </div>
 
 
 
@@ -123,11 +158,6 @@
 
 
 
-    function inicio(){
-
-    window.setInterval(traer(), 3000);
-
-}
 
 
             function traer (){
@@ -150,14 +180,14 @@
                         contenido.innerHTML += `
 
                         <tr>
-                        <th scope="col">  ${valor.hora}  </th>
+                        <th scope="col">  <button type='button' class='btn btn-light'>${valor.hora}  </button></th>
                         </tr>
 
                         `
                 }
 
               
-                window.setInterval(traer(), 3000);
+                window.setInterval(traer(), 15000);
 
             }
 
@@ -165,10 +195,7 @@
 
 
 
-         
-         
 traer();
-
 
 
 </script>
