@@ -8,10 +8,6 @@
     $query = "SELECT * FROM horarios";
     $result = mysqli_query($conn, $query);
 
-    fetch('./data.php')
-    .then(response => response.json())
-    .then(data => console.log(data));
-
 ?>
 
 <!doctype html>
