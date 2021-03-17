@@ -73,7 +73,7 @@
 
 
         <div class="col-4">
-        <table class="table table-bordered border-dark text-center" id="example">
+        <table class="table table-bordered table-hover border-dark text-center" id="example">
 
 
 
@@ -85,7 +85,7 @@
 
         <div class="col-8">
 
-        <table class="table table-bordered border-dark text-center" id="example_2">
+        <table class="table table-bordered table-hover border-dark text-center" id="example_2">
 
         <?php
 
@@ -157,10 +157,10 @@
     var contenido = document.querySelector('#example');
 
 
+    var myTimer = window.setInterval(traer, 10000);
 
 
-
-            function traer (){
+            function traer(){
 
                 fetch('./data.php')
                 .then(res => res.json())
@@ -185,9 +185,6 @@
 
                         `
                 }
-
-              
-                window.setInterval(traer(), 15000);
 
             }
 
