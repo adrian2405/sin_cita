@@ -4,7 +4,9 @@
     include "funciones.php";
 
     $query = "SELECT * FROM horarios";
+    $query_info = "SELECT * FROM horarios_info";
     $result = mysqli_query($conn, $query);
+    $result_info = mysqli_query($conn, $query_info);
 
     //Función resetear que borra la tabla y la vuelve a crear insertando de nuevo los valores
 
@@ -118,7 +120,6 @@
 
             function tabla (data){
 
-                console.log('hola');
 
                 contenido.innerHTML = ''
                 for(let valor of data){

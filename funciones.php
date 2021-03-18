@@ -16,6 +16,13 @@ function delete($tblname,$field_id,$id){
     return db_query($sql);
 }
 
+function insert($tblname,$field_id,$id){
+
+    $sql = "INSERT INTO ".$tblname." WHERE ".$field_id."=".$id."";
+    
+    return db_query($sql);
+}
+
 function select_id($tblname,$field_name,$field_id){
     $sql = "SELECT * FROM ".$tblname." WHERE ".$field_name." = ".$field_id."";
     $db=db_query($sql);
