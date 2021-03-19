@@ -3,7 +3,7 @@
     include "conexion.php";
     include "funciones.php";
 
-    $query = "SELECT * FROM horarios";
+    $query = "SELECT * FROM horarios_info";
     $result = mysqli_query($conn, $query);
 
 ?>

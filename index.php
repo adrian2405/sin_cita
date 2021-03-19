@@ -4,9 +4,7 @@
     include "funciones.php";
 
     $query = "SELECT * FROM horarios";
-    $query_info = "SELECT * FROM horarios_info";
     $result = mysqli_query($conn, $query);
-    $result_info = mysqli_query($conn, $query_info);
 
     //Función resetear que borra la tabla y la vuelve a crear insertando de nuevo los valores
 
@@ -77,16 +75,25 @@
 
         while($row = mysqli_fetch_array($result))
         {
+
         ?>
             <tr>
 
             <!-- Pendiente modificar botones para que envíen las variables a info.php -->
-
-            <td><button type='button' class='btn btn-outline-secondary'>Atender</button></td>
+            <form method="POST" action="">
+            <td><input type="submit" name="insert" value="Atender" class="btn btn-outline-dark" /></td>
+            </form>
             <td><button type='button' class='btn btn-outline-secondary'>Sin cita</button></td>
             <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
             </tr>
         <?php
+        }
+
+        if(isset($_POST['insert'])){
+
+            $insert = "INSERT INTO horarios_info VALUES (".$row['hora'].") WHERE 'id' = ".$row['id']."";
+            $result = mysqli_query($conn, $insert);
+
         }
 
         ?>
