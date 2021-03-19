@@ -40,19 +40,19 @@
         </div>
 
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active" data-bs-interval="10000">
-      <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block" id="example">
-      </div>
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block" id="example">
+                </div>
+            </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block" id="example_2">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="carousel-item" data-bs-interval="10000">
-      <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-      </div>
-    </div>
-  </div>
-</div>
 
     </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
@@ -75,8 +75,7 @@ var contenido_2 = document.querySelector('#example_2');
             function alerta (data){
                 if(data != ''){
 
-                    data.forEach(element => contenido.innerHTML = 'Atendiendo cita: ' + element.hora.toString());
-
+                    data.forEach(element => contenido.innerHTML = '<h1>SU TURNO: </h1> <br> <h2>Atendiendo cita: ' + element.hora.toString() + '</h2><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
 
                 }else{
 

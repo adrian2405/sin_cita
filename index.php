@@ -91,7 +91,7 @@
 
         if(isset($_POST['insert'])){
 
-            $insert = "INSERT INTO horarios_info VALUES (".$row['hora'].") WHERE 'id' = ".$row['id']."";
+            $insert = "INSERT INTO horarios_info VALUES ".$row['hora']." WHERE 'id' = ".$row['id']."";
             $result = mysqli_query($conn, $insert);
 
         }
