@@ -28,6 +28,16 @@
 
 ?>
 
+
+
+
+
+
+
+
+
+
+
 <!doctype html>
 <html lang="en">
 
@@ -37,6 +47,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <title>Panel de control</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -58,47 +69,13 @@
 
     </div>
 
-        <div class="col-4">
-        <table class="table table-bordered table-hover border-dark text-center" id="example">
+        <div class="col-8">
 
-        </table>
+        <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
 
         </div>
 
         <div class="col-8">
-
-        <table class="table table-bordered table-hover border-dark text-center" id="example_2">
-
-        <?php
-
-        //Función que recorre la tabla de la base de datos y lo muestra en una tabla html
-
-        while($row = mysqli_fetch_array($result))
-        {
-
-        ?>
-            <tr>
-
-            <!-- Pendiente modificar botones para que envíen las variables a info.php -->
-            <form method="POST" action="">
-            <td><input type="submit" name="insert" value="Atender" class="btn btn-outline-dark" /></td>
-            </form>
-            <td><button type='button' class='btn btn-outline-secondary'>Sin cita</button></td>
-            <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
-            </tr>
-        <?php
-        }
-
-        if(isset($_POST['insert'])){
-
-            $insert = "INSERT INTO horarios_info VALUES (".$row['hora'].") WHERE 'id' = ".$row['id']."";
-            $result = mysqli_query($conn, $insert);
-
-        }
-
-        ?>
-
-        </table>
 
         </div>
 
@@ -111,8 +88,29 @@
 
 </body>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <script>
     
+
+
+
+
+
+
     var contenido = document.querySelector('#example');
 
     var myTimer = window.setInterval(traer, 10000);
@@ -125,25 +123,188 @@
 
             }
 
+
+/***************
+
+AQUI SE CREA LA TABLA
+
+CADA BOTON TIENE UN EVENTO QUE LANZA SU FUNCION CORRESPONDIENTE 
+
+CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO NAME
+
+
+ */
+
             function tabla (data){
 
 
                 contenido.innerHTML = ''
+
+
                 for(let valor of data){
+
+
 
                         contenido.innerHTML += `
 
                         <tr>
-                        <th scope="col">  <button type='button' class='btn btn-light'>${valor.hora}  </button></th>
+                        <td scope="col">  ${valor.hora} </td>
+                       
+                        <td scope="col">
+
+                        <form method="post">
+                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-primary" value="ATENDER" id="A${valor.hora}">
+                        </form>
+
+                        </td> 
+
+                        <td scope="col">
+
+                        <form method="post">
+                        <input type="button" onclick="deleteAppointment(this.name)" name="${valor.hora}" class="btn btn-primary" value="BORRAR" id="D${valor.hora}">
+                        </form>
+
+                        </td>
+
+
+                        <td scope="col">
+
+                        <form method="post">
+                        <input type="button" onclick="notAppointment(this.name)" name="${valor.hora}" class="btn btn-primary" value="SIN CITA" id="S${valor.hora}">
+                        </form>
+
+                        </td>
+                       
                         </tr>
 
-                        `
-                }
+                        `;
 
-            }
+
+                   
+
+                }//FIN BUCLE
+
+            }//FIN METODO
+
 
 traer();
 
+
+
+
+
+
+
+
+
+function deleteAppointment (name){
+
+//AQUI VA EL ALGORITMO DE ABAJO
+alert('BORRANDO A ' + name)
+
+}
+
+
+
+function notAppointment (name){
+
+//AQUI VA EL ALGORITMO DE ABAJO
+alert('SIN CITA  ' + name)
+
+}
+
+
+
+
+function attending (name){
+
+//AQUI VA EL ALGORITMO DE ABAJO
+alert('ATENDIENDO A ' + name)
+
+}
+
+
+
+
+
+
+//ESTE ES EL ALGORITMO QUE VA EN LAS FUNCIONES DE ATENDER, BORRAR Y SIN CITA
+
+//SOLO HAY QUE EDITARLO Y USAR SOLO LO QUE NOSOTROS NECESITAMOS PARA NUESTRO PROYECTO
+
+//LA IDEA DE ESTE ALGORITMO ES MEDIANTE JQUERY Y AJAX ENVIAR LA HORA AL PHP CORRESPONDIENTE
+
+//EN ESE PHP SE RECOGE LA HORA Y SE HACE LO QUE SE TENGA QUE HACER 
+
+//TE DEJO EL LINK DE DONDE SE MUESTRA COMO FUNCIONA 
+//CODIGO: https://www.studentstutorial.com/ajax/insert-data
+//VIDEO: https://www.youtube.com/watch?v=DqYbcjj9M2U&t=66s
+
+//PERO OJOO!!! NO PODEMOS COPIARLO TAL CUAL, HAY QUE ADAPTARLO A LO NUESTRO
+
+//SOLO CON LO QUE COPIE AQUI ABAJO DEBERIA FURULAR JEJE
+
+// ***** VAMOS ADRIAN SOMOS DIOSES DE LA PROGRAMACION XD *******
+
+/*
+
+$(document).ready(function() {
+
+
+$.ajax({
+				url: "save.php",
+				type: "POST",
+				data: {
+					name: name				
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+					if(dataResult.statusCode==200){
+						$("#butsave").removeAttr("disabled");
+						$('#fupForm').find('input:text').val('');
+						$("#success").show();
+						$('#success').html('Data added successfully !'); 						
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+					
+				}
+			});
+
+
+
+});
+
+ */
+
+
+
+
 </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>
