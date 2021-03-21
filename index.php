@@ -113,7 +113,7 @@
 
     var contenido = document.querySelector('#example');
 
-    var myTimer = window.setInterval(traer, 10000);
+    var myTimer = window.setInterval(traer, 3000);
 
             function traer(){
 
@@ -199,8 +199,25 @@ traer();
 
 function deleteAppointment (name){
 
-//AQUI VA EL ALGORITMO DE ABAJO
-alert('BORRANDO A ' + name)
+    $(document).ready(function() {
+
+$.ajax({
+				url: "borrar.php",
+				type: "POST",
+				data: {
+					name: name				
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+
+					
+				}
+			});
+
+
+
+});
 
 }
 
@@ -218,8 +235,26 @@ alert('SIN CITA  ' + name)
 
 function attending (name){
 
-//AQUI VA EL ALGORITMO DE ABAJO
-alert('ATENDIENDO A ' + name)
+    $(document).ready(function() {
+
+
+$.ajax({
+				url: "save.php",
+				type: "POST",
+				data: {
+					name: name				
+				},
+				cache: false,
+				success: function(dataResult){
+					var dataResult = JSON.parse(dataResult);
+
+					
+				}
+			});
+
+
+
+});
 
 }
 

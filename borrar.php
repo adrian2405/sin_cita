@@ -1,8 +1,11 @@
-<?php 
-
-// Aquí se recogen los valores para activar la función delete y te redirige de nuevo a index
-
-include("funciones.php");
-$id = $_GET['id'];
-delete('horarios','id',$id);
-header("location:index.php");
+<?php
+	include 'conexion.php';
+	$name=$_POST['name'];
+	$sql = "DELETE FROM `horarios` WHERE hora = '$name'";
+	if (mysqli_query($conn, $sql)) {
+		echo json_encode(array("statusCode"=>200));
+	} 
+	else {
+		echo json_encode(array("statusCode"=>201));
+	}
+	mysqli_close($conn);
