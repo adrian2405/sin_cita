@@ -78,22 +78,12 @@
 
         ?>
             <tr>
-
             <!-- Pendiente modificar botones para que envíen las variables a info.php -->
-            <form method="POST" action="">
-            <td><input type="submit" name="insert" value="Atender" class="btn btn-outline-dark" /></td>
-            </form>
+            <td><a class="btn btn-outline-dark" href="insertar.php? hora=<?php echo $row["hora"];?>"> Atender</a></td>
             <td><button type='button' class='btn btn-outline-secondary'>Sin cita</button></td>
             <td><a class="btn btn-outline-danger" href="borrar.php? id=<?php echo $row["id"];?>"> Eliminar</a></td>
             </tr>
         <?php
-        }
-
-        if(isset($_POST['insert'])){
-
-            $insert = "INSERT INTO horarios_info VALUES ".$row['hora']." WHERE 'id' = ".$row['id']."";
-            $result = mysqli_query($conn, $insert);
-
         }
 
         ?>
