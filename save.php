@@ -1,7 +1,8 @@
 <?php
 	include 'conexion.php';
 	$name=$_POST['name'];
-	$sql = "DELETE FROM `horarios_info` WHERE hora = '$name'";
+
+	$sql = "DELETE FROM `horarios_info`";
 	if (mysqli_query($conn, $sql)) {
 		echo json_encode(array("statusCode"=>200));
 	} 
@@ -9,7 +10,8 @@
 		echo json_encode(array("statusCode"=>201));
 	}
 
-	$sql = "DELETE FROM `horarios` WHERE hora = '$name'";
+	$sql = "INSERT INTO `horarios_info`(`hora`) 
+	VALUES ('$name')";
 	if (mysqli_query($conn, $sql)) {
 		echo json_encode(array("statusCode"=>200));
 	} 

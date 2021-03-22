@@ -23,9 +23,31 @@
 
 <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
-    <div class="container-fluid d-flex justify-content-center">
+        <div class="container-fluid d-flex justify-content-center">
 
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block" id="example">
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block" id="example_2">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    </div>
+
+    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
                     <img src="./assets/img/imagen_1.png" class="d-block w-100" alt="...">
@@ -39,22 +61,6 @@
                 </div>
         </div>
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block" id="example">
-                </div>
-            </div>
-                <div class="carousel-item" data-bs-interval="5000">
-                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption d-none d-md-block" id="example_2">
-                </div>
-            </div>
-        </div>
-    </div>
-
-    </div>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script>
@@ -79,7 +85,7 @@ var contenido_2 = document.querySelector('#example_2');
 
                 }else{
 
-                  contenido.innerHTML = '<p class="text-white">Espere su turno por favor.</p>';
+                  contenido.innerHTML = '<h1 class="h1 text-white">Espere su turno por favor.</h1>';
 
                 }
             }
