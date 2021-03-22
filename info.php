@@ -24,20 +24,20 @@
 
         <div class="container-fluid d-flex justify-content-center">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50 m-2" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="fondo_negro">
                         <div class="carousel-caption d-none d-md-block" id="example">
                 </div>
             </div>
         </div>
     </div>
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50 m-2" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="5000">
-                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="...">
+                <div class="carousel-item active" data-bs-interval="3000">
+                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="fondo_negro">
                         <div class="carousel-caption d-none d-md-block" id="example_2">
                 </div>
             </div>
@@ -49,13 +49,13 @@
     <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active">
-                    <img src="./assets/img/imagen_1.png" class="d-block w-100" alt="...">
+                    <img src="./assets/img/imagen_1.png" class="d-block w-100" alt="imagen_1">
         </div>
                 <div class="carousel-item">
-                    <img src="./assets/img/imagen_2.png" class="d-block w-100" alt="...">
+                    <img src="./assets/img/imagen_2.png" class="d-block w-100" alt="imagen_2">
         </div>
                 <div class="carousel-item">
-                    <img src="./assets/img/imagen_3.png" class="d-block w-100" alt="...">
+                    <img src="./assets/img/imagen_3.png" class="d-block w-100" alt="imagen_3">
                         </div>
                 </div>
         </div>
@@ -80,11 +80,11 @@ var contenido_2 = document.querySelector('#example_2');
             function alerta (data){
                 if(data != ''){
 
-                    data.forEach(element => contenido.innerHTML = '<h1>SU TURNO: </h1> <br> <h2>Atendiendo cita: ' + element.hora.toString() + '</h2><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+                    data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><br><h2 class="h2">SU TURNO: </h2> <br> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
 
                 }else{
 
-                  contenido.innerHTML = '<h1 class="h1 text-white">Espere su turno por favor.</h1>';
+                  contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2>';
 
                 }
             }

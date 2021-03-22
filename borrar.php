@@ -1,8 +1,8 @@
 <?php
 	include 'conexion.php';
 	$name=$_POST['name'];
-	$sql = "DELETE FROM `horarios_info` WHERE hora = '$name'";
-	if (mysqli_query($conn, $sql)) {
+	$sql_info = "DELETE FROM `horarios_info` WHERE hora = '$name'";
+	if (mysqli_query($conn, $sql_info)) {
 		echo json_encode(array("statusCode"=>200));
 	} 
 	else {
