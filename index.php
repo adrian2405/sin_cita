@@ -1,7 +1,6 @@
 <?php
 
     include "conexion.php";
-    include "funciones.php";
 
     $query = "SELECT * FROM horarios";
     $result = mysqli_query($conn, $query);
