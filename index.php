@@ -116,7 +116,7 @@
 
     var contenido = document.querySelector('#example');
 
-    var myTimer = window.setInterval(traer, 3000);
+    var myTimer = window.setInterval(traer, 10000);
 
             function traer(){
 
