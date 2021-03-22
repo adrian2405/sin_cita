@@ -1,8 +1,6 @@
 <?php
 
-//Estaba pensando para poder identificar las horas para cada recepcion de la tienda que serian 2, identificarlos mediante el id que sería 1 o 2
-//La idea sería que al borrar una hora se reiniciara el autoincremento para que asi siempre sean los ids 1 y 2
-//Abajo dejo el enlace de como sería
+//Para saber como reiniciar contador autoincremento de la tabla. Enlace abajo.
 
 //https://es.stackoverflow.com/questions/11331/como-reiniciar-el-auto-increment-de-mysql/11332
 
