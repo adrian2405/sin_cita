@@ -33,14 +33,6 @@
 
 
 
-
-
-
-
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -74,10 +66,7 @@
 
         <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
 
-
-
         </div>
-
 
         </div>
 
@@ -88,28 +77,8 @@
 
 </body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <script>
     
-
-
-
-
-
 
     var contenido = document.querySelector('#example');
 
@@ -153,7 +122,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <td scope="col">
 
                         <form method="post">
-                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" data-bs-toggle="modal" data-bs-target="#example" class="btn btn-outline-dark" value="Atender" id="A${valor.hora}">
+                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="A${valor.hora}">
                         </form>
 
                         </td> 
@@ -190,13 +159,6 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 traer();
 
 
-
-
-
-
-
-
-
 function deleteAppointment (name){
 
     $(document).ready(function() {
@@ -222,15 +184,12 @@ $.ajax({
 }
 
 
-
 function notAppointment (name){
 
 //AQUI VA EL ALGORITMO DE ABAJO
 alert('SIN CITA  ' + name)
 
 }
-
-
 
 
 function attending (name){
@@ -242,7 +201,7 @@ function attending (name){
 				url: "save.php",
 				type: "POST",
 				data: {
-					name: name				
+					name: name,		
 				},
 				cache: false,
 				success: function(dataResult){
@@ -251,95 +210,11 @@ function attending (name){
 					
 				}
 			});
-
-
 
 });
 
 }
 
-
-
-
-
-
-//ESTE ES EL ALGORITMO QUE VA EN LAS FUNCIONES DE ATENDER, BORRAR Y SIN CITA
-
-//SOLO HAY QUE EDITARLO Y USAR SOLO LO QUE NOSOTROS NECESITAMOS PARA NUESTRO PROYECTO
-
-//LA IDEA DE ESTE ALGORITMO ES MEDIANTE JQUERY Y AJAX ENVIAR LA HORA AL PHP CORRESPONDIENTE
-
-//EN ESE PHP SE RECOGE LA HORA Y SE HACE LO QUE SE TENGA QUE HACER 
-
-//TE DEJO EL LINK DE DONDE SE MUESTRA COMO FUNCIONA 
-//CODIGO: https://www.studentstutorial.com/ajax/insert-data
-//VIDEO: https://www.youtube.com/watch?v=DqYbcjj9M2U&t=66s
-
-//PERO OJOO!!! NO PODEMOS COPIARLO TAL CUAL, HAY QUE ADAPTARLO A LO NUESTRO
-
-//SOLO CON LO QUE COPIE AQUI ABAJO DEBERIA FURULAR JEJE
-
-// ***** VAMOS ADRIAN SOMOS DIOSES DE LA PROGRAMACION XD *******
-
-/*
-
-$(document).ready(function() {
-
-
-$.ajax({
-				url: "save.php",
-				type: "POST",
-				data: {
-					name: name				
-				},
-				cache: false,
-				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
-					if(dataResult.statusCode==200){
-						$("#butsave").removeAttr("disabled");
-						$('#fupForm').find('input:text').val('');
-						$("#success").show();
-						$('#success').html('Data added successfully !'); 						
-					}
-					else if(dataResult.statusCode==201){
-					   alert("Error occured !");
-					}
-					
-				}
-			});
-
-
-
-});
-
- */
-
-
-
-
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 </html>
