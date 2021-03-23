@@ -67,20 +67,17 @@
 
         <form method="POST" action="" class="text-center m-3">
         <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary" />
-        <a class="btn btn-outline-info" href="info.php"> Ir a info</a>
+        <a class="btn btn-outline-info" href="info.php" target="_blank"> Ir a info</a>
         </form>
 
     </div>
 
-        <div class="col-8">
-
         <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
 
-        </div>
 
-        <div class="col-8">
 
         </div>
+
 
         </div>
 
@@ -156,7 +153,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <td scope="col">
 
                         <form method="post">
-                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="A${valor.hora}">
+                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" data-bs-toggle="modal" data-bs-target="#example" class="btn btn-outline-dark" value="Atender" id="A${valor.hora}">
                         </form>
 
                         </td> 
@@ -241,7 +238,7 @@ function attending (name){
     $(document).ready(function() {
 
 
-$.ajax({
+            $.ajax({
 				url: "save.php",
 				type: "POST",
 				data: {

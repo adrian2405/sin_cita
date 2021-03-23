@@ -2,9 +2,6 @@
 
     include "conexion.php";
 
-    $query = "SELECT * FROM horarios_info";
-    $result = mysqli_query($conn, $query);
-
 ?>
 
 <!doctype html>
@@ -79,7 +76,6 @@ var contenido_2 = document.querySelector('#example_2');
 
             function alerta (data){
                 if(data != ''){
-
                     data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><br><h2 class="h2">SU TURNO: </h2> <br> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
 
                 }else{
