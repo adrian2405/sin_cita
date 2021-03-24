@@ -62,11 +62,9 @@
         <a class="btn btn-outline-info" href="info.php" target="_blank"> Ir a info</a>
         </form>
 
-    </div>
+        </div>
 
         <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
-
-        </div>
 
         </div>
 
@@ -121,20 +119,18 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                        
                         <td scope="col">
 
-                        <form method="post">
+                        <form method="post" class="d-flex flex-row justify-content-around">
                         <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="A${valor.hora}">
-                        </form>
-
-                        </td> 
-
-                        <td scope="col">
-
-                        <form method="post">
                         <input type="button" onclick="notAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Sin cita" id="D${valor.hora}">
+                        <select class="form-select w-50" aria-label="recepcion">
+                            <option selected>Elige una recepción</option>
+                            <option value="1">Recepción 1</option>
+                            <option value="2">Recepción 2</option>
+                            <option value="3">Recepción 3</option>
+                        </select>
                         </form>
 
                         </td>
-
 
                         <td scope="col">
 
