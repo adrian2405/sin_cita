@@ -47,27 +47,6 @@
 
 <body>
 
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Recepción</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        Selecciona una recepción: <br><br>
-        <button type="button" class="btn btn-primary">Recepción 1</button>
-        <button type="button" class="btn btn-primary">Recepción 2</button>
-        <button type="button" class="btn btn-primary">Recepción 3</button>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
     <div class="container-lg">
 
     <div class="row justify-content-center">
@@ -101,7 +80,18 @@
 
     var contenido = document.querySelector('#example');
 
-    var myTimer = window.setInterval(traer, 10000);
+    var myTimer;
+
+    function intervalo(){
+
+        myTimer = window.setInterval(traer, 3000);
+
+    }
+
+    function detenerIntervalo(){
+        clearInterval(myTimer);
+    }
+    
 
             function traer(){
 
@@ -141,7 +131,26 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <td scope="col">
 
                         <form method="post" class="d-flex flex-row justify-content-around">
-                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnAtender" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Recepción</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Selecciona una recepción: <br><br>
+                                        <input type="button" class="btn btn-primary" value="Recepción 1" data-bs-dismiss="modal" onclick="attending(this.name)" name="${valor.hora}"/>
+                                        <input type="button" class="btn btn-success" value="Recepción 2" data-bs-dismiss="modal" onclick="attending(this.name)" name="${valor.hora}"/>
+                                        <input type="button" class="btn btn-info" value="Recepción 3" data-bs-dismiss="modal" onclick="attending(this.name)" name="${valor.hora}"/>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="button" class="btn btn-outline-dark" value="Atender" id="btnAtender" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="detenerIntervalo()">
                         <input type="button" onclick="notAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Sin cita" id="btnSinCita">
                         </form>
 
@@ -159,13 +168,9 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                         `;
 
-
-                   
-
                 }//FIN BUCLE
 
             }//FIN METODO
-
 
 traer();
 
@@ -177,6 +182,8 @@ function deleteAppointment (name){
     spin.classList.remove('btn-outline-danger');
     spin.classList.add('spinner-border');
     spin.classList.add('text-danger');
+
+    intervalo();
 
     $(document).ready(function() {
 
