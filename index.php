@@ -47,6 +47,27 @@
 
 <body>
 
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Recepción</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Selecciona una recepción: <br><br>
+        <button type="button" class="btn btn-primary">Recepción 1</button>
+        <button type="button" class="btn btn-primary">Recepción 2</button>
+        <button type="button" class="btn btn-primary">Recepción 3</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
     <div class="container-lg">
 
     <div class="row justify-content-center">
@@ -120,14 +141,8 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <td scope="col">
 
                         <form method="post" class="d-flex flex-row justify-content-around">
-                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="A${valor.hora}">
-                        <input type="button" onclick="notAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Sin cita" id="D${valor.hora}">
-                        <select class="form-select w-50" aria-label="recepcion">
-                            <option selected>Elige una recepción</option>
-                            <option value="1">Recepción 1</option>
-                            <option value="2">Recepción 2</option>
-                            <option value="3">Recepción 3</option>
-                        </select>
+                        <input type="button" onclick="attending(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnAtender" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        <input type="button" onclick="notAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Sin cita" id="btnSinCita">
                         </form>
 
                         </td>
@@ -135,7 +150,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <td scope="col">
 
                         <form method="post">
-                        <input type="button" onclick="deleteAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="S${valor.hora}">
+                        <input type="button" onclick="deleteAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar">
                         </form>
 
                         </td>
@@ -157,6 +172,12 @@ traer();
 
 function deleteAppointment (name){
 
+    const spin = document.getElementById('btnEliminar');
+    spin.classList.remove('btn');
+    spin.classList.remove('btn-outline-danger');
+    spin.classList.add('spinner-border');
+    spin.classList.add('text-danger');
+
     $(document).ready(function() {
 
 $.ajax({
@@ -166,11 +187,7 @@ $.ajax({
 					name: name				
 				},
 				cache: false,
-				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
 
-					
-				}
 			});
 
 
@@ -190,6 +207,10 @@ alert('SIN CITA  ' + name)
 
 function attending (name){
 
+    const spin = document.getElementById('btnAtender');
+    spin.classList.add('active');
+
+
     $(document).ready(function() {
 
 
@@ -197,19 +218,16 @@ function attending (name){
 				url: "save.php",
 				type: "POST",
 				data: {
-					name: name,		
+					name: name
 				},
 				cache: false,
-				success: function(dataResult){
-					var dataResult = JSON.parse(dataResult);
 
-					
-				}
 			});
 
 });
 
 }
+
 
 </script>
 
