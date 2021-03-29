@@ -80,17 +80,7 @@
 
     var contenido = document.querySelector('#example');
 
-    var myTimer;
-
-    function intervalo(){
-
-        myTimer = window.setInterval(traer, 3000);
-
-    }
-
-    function detenerIntervalo(){
-        clearInterval(myTimer);
-    }
+        var myTimer = window.setInterval(traer, 4000);
     
 
             function traer(){
@@ -116,7 +106,13 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
             function tabla (data){
 
 
-                contenido.innerHTML = ''
+                contenido.innerHTML = `<thead>
+                            <tr>
+                            <th scope="col">Citas</th>
+                            <th scope="col">Recepción 1</th>
+                            <th scope="col">Recepción 2</th>
+                            </tr>
+                        </thead>`
 
 
                 for(let valor of data){
@@ -125,41 +121,21 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                         contenido.innerHTML += `
 
+                        <tbody>
                         <tr>
-                        <td scope="col">  ${valor.hora} </td>
+                        <td scope="col" class="h2">  ${valor.hora} </td>
                        
-                        <td scope="col">
-
-                        <form method="post" class="d-flex flex-row justify-content-around">
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Recepción</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        Selecciona una recepción: <br><br>
-                                        <input type="button" class="btn btn-primary" value="Recepción 1" data-bs-dismiss="modal" onclick="attending(this.name)" name="${valor.hora}"/>
-                                        <input type="button" class="btn btn-success" value="Recepción 2" data-bs-dismiss="modal" onclick="attending(this.name)" name="${valor.hora}"/>
-                                        <input type="button" class="btn btn-info" value="Recepción 3" data-bs-dismiss="modal" onclick="attending(this.name)" name="${valor.hora}"/>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <input type="button" class="btn btn-outline-dark" value="Atender" id="btnAtender" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="detenerIntervalo()">
-                        <input type="button" onclick="notAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Sin cita" id="btnSinCita">
-                        </form>
-
-                        </td>
-
-                        <td scope="col">
+                        <td scope="row">
 
                         <form method="post">
-                        <input type="button" onclick="deleteAppointment(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar">
+                        <input type="button" onclick="reception_1(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec1">
+                        <input type="button" onclick="delete_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar1">
+                        </td>
+
+                        <td scope="row">
+                        <input type="button" onclick="reception_2(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Atender" id="btnRec2">
+                        <input type="button" onclick="delete_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
+
                         </form>
 
                         </td>
@@ -175,15 +151,8 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 traer();
 
 
-function deleteAppointment (name){
+function delete_1 (name){
 
-    const spin = document.getElementById('btnEliminar');
-    spin.classList.remove('btn');
-    spin.classList.remove('btn-outline-danger');
-    spin.classList.add('spinner-border');
-    spin.classList.add('text-danger');
-
-    intervalo();
 
     $(document).ready(function() {
 
@@ -193,7 +162,7 @@ $.ajax({
 				data: {
 					name: name				
 				},
-				cache: false,
+				cache: false
 
 			});
 
@@ -203,19 +172,49 @@ $.ajax({
 
 }
 
+function delete_2 (name){
 
-function notAppointment (name){
 
-//AQUI VA EL ALGORITMO DE ABAJO
-alert('SIN CITA  ' + name)
+$(document).ready(function() {
+
+$.ajax({
+            url: "borrar_2.php",
+            type: "POST",
+            data: {
+                name: name				
+            },
+            cache: false
+
+        });
+
+
+
+});
 
 }
 
 
-function attending (name){
+function reception_2 (name){
 
-    const spin = document.getElementById('btnAtender');
-    spin.classList.add('active');
+    $(document).ready(function() {
+
+
+$.ajax({
+    url: "save_2.php",
+    type: "POST",
+    data: {
+        name: name
+    },
+    cache: false
+
+});
+
+});
+
+}
+
+
+function reception_1 (name){
 
 
     $(document).ready(function() {
@@ -227,7 +226,7 @@ function attending (name){
 				data: {
 					name: name
 				},
-				cache: false,
+				cache: false
 
 			});
 

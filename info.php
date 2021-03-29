@@ -64,7 +64,8 @@
 var contenido = document.querySelector('#example');
 var contenido_2 = document.querySelector('#example_2');
 
-    var myTimer = window.setInterval(traer, 10000);
+    var myTimer = window.setInterval(traer, 8000);
+    var myTimer2 = window.setInterval(traer2, 9000);
 
             function traer(){
 
@@ -75,6 +76,7 @@ var contenido_2 = document.querySelector('#example_2');
             }
 
             function alerta (data){
+
                 if(data != ''){
                     data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><br><h2 class="h2">SU TURNO: </h2> <br> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
 
@@ -85,7 +87,29 @@ var contenido_2 = document.querySelector('#example_2');
                 }
             }
 
+function traer2(){
+
+fetch('./data_info_2.php')
+.then(res => res.json())
+.then(data => {alerta2(data)});
+
+}
+
+function alerta2 (data){
+
+if(data != ''){
+    data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><br><h2 class="h2">SU TURNO: </h2> <br> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+
+}else{
+
+  contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2>';
+
+}
+}
+
 traer();
+
+traer2();
 
 </script>
 </body>
