@@ -134,7 +134,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                         <td scope="row">
                         <input type="button" onclick="reception_2(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Atender" id="btnRec2">
-                        <input type="button" onclick="delete_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
+                        <input type="button" onclick="delete_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
 
                         </form>
 
@@ -172,26 +172,6 @@ $.ajax({
 
 }
 
-function delete_2 (name){
-
-
-$(document).ready(function() {
-
-$.ajax({
-            url: "borrar_2.php",
-            type: "POST",
-            data: {
-                name: name				
-            },
-            cache: false
-
-        });
-
-
-
-});
-
-}
 
 
 function reception_2 (name){
