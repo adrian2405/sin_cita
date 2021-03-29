@@ -65,7 +65,7 @@ var contenido = document.querySelector('#example');
 var contenido_2 = document.querySelector('#example_2');
 
     var myTimer = window.setInterval(traer, 6000);
-    var myTimer2 = window.setInterval(traer2, 6000);
+    var myTimer_2 = window.setInterval(traer_2, 7000);
 
             function traer(){
 
