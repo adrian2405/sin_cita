@@ -128,13 +128,11 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <form method="post">
                         <input type="button" onclick="reception_1(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec1">
                         <input type="button" onclick="delete_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar1">
-                        <input type="button" onclick="speak(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Llamar" id="btnLlamar1">
                         </td>
 
                         <td scope="row">
                         <input type="button" onclick="reception_2(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Atender" id="btnRec2">
                         <input type="button" onclick="delete_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
-                        <input type="button" onclick="speak(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Llamar" id="btnLlamar2">
 
                         </form>
 
@@ -213,17 +211,6 @@ function reception_1 (name){
 
 }
 
-function speak (message) {
-  var msg = new SpeechSynthesisUtterance(message)
-  var voices = window.speechSynthesis.getVoices()
-  msg.voice = voices[14]
-  window.speechSynthesis.speak(msg)
-}
-
-
-
-
 </script>
-<script src="voz.js"></script>
 
 </html>
