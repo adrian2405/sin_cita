@@ -64,11 +64,23 @@
 
         </div>
 
+        <label for="voces">Selecciona la voz:</label>
+    <br>
+   <select id="voces">
+		</select>
+		<br>
+		<br>
+		Escribe tu mensaje:<br>
+		<textarea id="mensaje" cols="30" rows="5"></textarea>
+		<br><br>
+		<button id="btnEscuchar">Escuchar</button>
+
         <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
 
         </div>
 
     </div>
+    <script src="voz.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
@@ -116,8 +128,6 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
 
                 for(let valor of data){
-
-
 
                         contenido.innerHTML += `
 
@@ -213,6 +223,7 @@ function reception_1 (name){
 });
 
 }
+
 
 
 </script>
