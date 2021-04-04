@@ -19,43 +19,53 @@
 
 <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
-        <div class="container-fluid d-flex justify-content-center">
+    <div class="container w-100 h-50">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50 m-2" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50 m-2" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="fondo_negro">
-                        <div class="carousel-caption d-none d-md-block" id="example">
+                <div class="carousel-item active" data-bs-interval="5000">
+                    <img src="./assets/img/promac.png" class="d-block w-100" alt="promac">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="./assets/img/icloud.png" class="d-block w-100" alt="icloud">
+                </div>
+                <div class="carousel-item" data-bs-interval="5000">
+                    <img src="./assets/img/reparaciones.png" class="d-block w-100" alt="reparaciones">
                 </div>
             </div>
         </div>
-    </div>
+    
+        <div class="container-fluid d-flex justify-content-center mt-5">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 h-50 m-2" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="3000">
-                    <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="fondo_negro">
-                        <div class="carousel-caption d-none d-md-block" id="example_2">
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="fondo_negro">
+                            <div class="carousel-caption d-none d-md-block" id="example">
+                            </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
 
-    </div>
-
-    <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="./assets/img/imagen_1.png" class="d-block w-100" alt="imagen_1">
-        </div>
-                <div class="carousel-item">
-                    <img src="./assets/img/imagen_2.png" class="d-block w-100" alt="imagen_2">
-        </div>
-                <div class="carousel-item">
-                    <img src="./assets/img/imagen_3.png" class="d-block w-100" alt="imagen_3">
-                        </div>
+            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="3000">
+                        <img src="./assets/img/negro.jpeg" class="d-block w-100" alt="fondo_negro">
+                            <div class="carousel-caption d-none d-md-block" id="example_2">
+                            </div>
+                    </div>
                 </div>
+            </div>
+
         </div>
+
+    </div>
+
+    <footer class="footer mt-auto bg-dark text-center text-white fixed-bottom">
+        <div class="container">
+            <p>&copy; Copyright Servicios Canarios Promac S.L. © 2017. &middot; <a href="#" class="text-decoration-none text-white-50">Política de privacidad</a> &middot; <a href="#" class="text-decoration-none text-white-50">Condiciones generales</a></p>
+        </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
