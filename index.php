@@ -60,12 +60,8 @@
 
         <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
-        <div class="container text-center">
-
-        <div id="alert1"></div>
-        <div id="alert2"></div>
-
-        </div>
+        <div class="container text-center" id="alert_1"></div>
+        <div class="container text-center" id="alert_2"></div>
 
         <!-- Botones resetear, ir a info y refrescar -->
 
@@ -224,11 +220,11 @@ function reception_1 (name){
 }
 
 function alertSuccess_1 (name){
-    var scc = document.getElementById('alert1');
+    var scc = document.getElementById('alert_1');
     scc.innerHTML = `
     
-    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert">
-        Recepción 1 has llamado a `+name+`.
+    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert" id="alert1">
+        Recepción 1 ha llamado a cita: `+name+`.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
@@ -236,11 +232,11 @@ function alertSuccess_1 (name){
 }
 
 function alertSuccess_2 (name){
-    var scc = document.getElementById('alert2');
+    var scc = document.getElementById('alert_2');
     scc.innerHTML = `
     
-    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert">
-    Recepción 2 has llamado a `+name+`.
+    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert" id="alert2">
+    Recepción 2 ha llamado a cita: `+name+`.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
@@ -248,11 +244,11 @@ function alertSuccess_2 (name){
 }
 
 function alertDanger_1 (name){
-    var scc = document.getElementById('alert1');
+    var scc = document.getElementById('alert_1');
     scc.innerHTML = `
     
-    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert">
-        Recepción 1 has eliminado a `+name+`.
+    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert1">
+        Recepción 1 ha eliminado a cita: `+name+`.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
@@ -260,11 +256,11 @@ function alertDanger_1 (name){
 }
 
 function alertDanger_2 (name){
-    var scc = document.getElementById('alert2');
+    var scc = document.getElementById('alert_2');
     scc.innerHTML = `
     
-    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert">
-    Recepción 2 has eliminado a `+name+`.
+    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert2">
+    Recepción 2 ha eliminado a cita: `+name+`.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     

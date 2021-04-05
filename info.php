@@ -37,7 +37,7 @@
     
         <div class="container-fluid d-flex justify-content-center mt-5">
 
-            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
+            <div id="carousel_1" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="3000">
                         <img src="./assets/img/negro.jpeg" class="d-block w-100 rounded" alt="fondo_negro">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
+            <div id="carousel_2" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="3000">
                         <img src="./assets/img/negro.jpeg" class="d-block w-100 rounded" alt="fondo_negro">
