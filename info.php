@@ -17,11 +17,11 @@
 
 <body>
 
-<h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
+<h1 class="h1 text-center bg-dark text-white p-2" id="title">Citas ProMac</h1>
 
     <div class="container w-100 h-50">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50 m-2 rounded" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50 m-2 mb-4 rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="6000">
                     <img src="./assets/img/promac.png" class="d-block w-100" alt="promac">
@@ -34,28 +34,14 @@
                 </div>
             </div>
         </div>
+
+        <h2 id="efecto_mensaje">Espere aqui su turno, le llamaremos enseguida.</h2>
     
         <div class="container-fluid d-flex justify-content-center mt-5">
 
-            <div id="carousel_1" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="3000">
-                        <img src="./assets/img/negro.jpeg" class="d-block w-100 rounded" alt="fondo_negro">
-                            <div class="carousel-caption d-none d-md-block" id="example">
-                            </div>
-                    </div>
-                </div>
-            </div>
+            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded efecto_turnos" id="example"></div>
 
-            <div id="carousel_2" class="carousel slide carousel-fade w-50 m-2" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active" data-bs-interval="3000">
-                        <img src="./assets/img/negro.jpeg" class="d-block w-100 rounded" alt="fondo_negro">
-                            <div class="carousel-caption d-none d-md-block" id="example_2">
-                            </div>
-                    </div>
-                </div>
-            </div>
+            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded efecto_turnos" id="example_2"></div>
 
         </div>
 
@@ -88,11 +74,11 @@ var contenido_2 = document.querySelector('#example_2');
             function alerta (data){
 
                 if(data != ''){
-                    data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><br><h2 class="h2">SU TURNO: </h2> <br> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+                    data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><h2 class="h2">SU TURNO: </h2> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
                     data.forEach(element => speak('Su turno, ' + element.hora.toString()));
                 }else{
 
-                  contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2>';
+                  contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
 
                 }
             }
@@ -108,11 +94,11 @@ fetch('./data_info_2.php')
 function alerta_2 (data){
 
 if(data != ''){
-    data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><br><h2 class="h2">SU TURNO: </h2> <br> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+    data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><h2 class="h2">SU TURNO: </h2> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
     data.forEach(element => speak('Su turno, ' + element.hora.toString()));
 }else{
 
-  contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2>';
+  contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
 
 }
 }
