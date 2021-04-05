@@ -60,8 +60,12 @@
 
         <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
+        <div class="container text-center">
+
         <div id="alert1"></div>
         <div id="alert2"></div>
+
+        </div>
 
         <!-- Botones resetear, ir a info y refrescar -->
 
@@ -223,8 +227,9 @@ function alertSuccess_1 (name){
     var scc = document.getElementById('alert1');
     scc.innerHTML = `
     
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert">
         Recepción 1 has llamado a `+name+`.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
@@ -234,8 +239,9 @@ function alertSuccess_2 (name){
     var scc = document.getElementById('alert2');
     scc.innerHTML = `
     
-    <div class="alert alert-success" role="alert">
+    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert">
     Recepción 2 has llamado a `+name+`.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
@@ -245,8 +251,9 @@ function alertDanger_1 (name){
     var scc = document.getElementById('alert1');
     scc.innerHTML = `
     
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert">
         Recepción 1 has eliminado a `+name+`.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
@@ -256,8 +263,9 @@ function alertDanger_2 (name){
     var scc = document.getElementById('alert2');
     scc.innerHTML = `
     
-    <div class="alert alert-danger" role="alert">
+    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert">
     Recepción 2 has eliminado a `+name+`.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
