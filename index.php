@@ -60,6 +60,9 @@
 
         <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
+        <div id="alert1"></div>
+        <div id="alert2"></div>
+
         <!-- Botones resetear, ir a info y refrescar -->
 
         <form method="POST" action="" class="text-center m-3">
@@ -131,13 +134,13 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <td scope="row">
 
                         <form method="post">
-                        <input type="button" onclick="reception_1(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec1">
-                        <input type="button" onclick="delete_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar1">
+                        <input type="button" onclick="reception_1(this.name), alertSuccess_1(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec1">
+                        <input type="button" onclick="delete_1(this.name), alertDanger_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar1">
                         </td>
 
                         <td scope="row">
-                        <input type="button" onclick="reception_2(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Atender" id="btnRec2">
-                        <input type="button" onclick="delete_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
+                        <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Atender" id="btnRec2">
+                        <input type="button" onclick="delete_1(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
 
                         </form>
 
@@ -214,6 +217,50 @@ function reception_1 (name){
 
 });
 
+}
+
+function alertSuccess_1 (name){
+    var scc = document.getElementById('alert1');
+    scc.innerHTML = `
+    
+    <div class="alert alert-success" role="alert">
+        Recepción 1 has llamado a `+name+`.
+    </div>
+    
+    `
+}
+
+function alertSuccess_2 (name){
+    var scc = document.getElementById('alert2');
+    scc.innerHTML = `
+    
+    <div class="alert alert-success" role="alert">
+    Recepción 2 has llamado a `+name+`.
+    </div>
+    
+    `
+}
+
+function alertDanger_1 (name){
+    var scc = document.getElementById('alert1');
+    scc.innerHTML = `
+    
+    <div class="alert alert-danger" role="alert">
+        Recepción 1 has eliminado a `+name+`.
+    </div>
+    
+    `
+}
+
+function alertDanger_2 (name){
+    var scc = document.getElementById('alert2');
+    scc.innerHTML = `
+    
+    <div class="alert alert-danger" role="alert">
+    Recepción 2 has eliminado a `+name+`.
+    </div>
+    
+    `
 }
 
 </script>
