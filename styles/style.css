@@ -1,8 +1,8 @@
 .efecto_turnos {
-    animation-duration: 3s;
+    background-color: forestgreen;
+    animation-duration: 1s;
     animation-name: pulse;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
+    animation-iteration-count: 1;
 }
 
 #efecto_mensaje {
@@ -25,9 +25,9 @@
 
 @keyframes pulse {
     0% {
-        transform: scale(0.95);
+        transform: scale(1);
     }
     100% {
-        transform: scale(1);
+        transform: scale(1.6);
     }
 }

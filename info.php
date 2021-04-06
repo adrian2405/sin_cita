@@ -39,9 +39,9 @@
     
         <div class="container-fluid d-flex justify-content-center mt-5">
 
-            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded efecto_turnos" id="example"></div>
+            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded" id="example"></div>
 
-            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded efecto_turnos" id="example_2"></div>
+            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded" id="example_2"></div>
 
         </div>
 
@@ -74,10 +74,13 @@ var contenido_2 = document.querySelector('#example_2');
             function alerta (data){
 
                 if(data != ''){
-                    data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><h2 class="h2">SU TURNO: </h2> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
-                    data.forEach(element => speak('Su turno, cita de las ' + element.hora.toString()));
+                    contenido.classList.remove('bg-dark');
+                    contenido.classList.add('efecto_turnos');
+                    data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><h2 class="h2">SU TURNO </h2> <h3 class="h3">Siguiente cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+                    data.forEach(element => speak('Su turno cita de las ' + element.hora.toString()));
                 }else{
-
+                    contenido.classList.remove('efecto_turnos');
+                    contenido.classList.add('bg-dark');
                   contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
 
                 }
@@ -94,10 +97,13 @@ fetch('./data_info_2.php')
 function alerta_2 (data){
 
 if(data != ''){
-    data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><h2 class="h2">SU TURNO: </h2> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
-    data.forEach(element => speak('Su turno, cita de las ' + element.hora.toString()));
+    contenido_2.classList.remove('bg-dark');
+    contenido_2.classList.add('efecto_turnos');
+    data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><h2 class="h2">SU TURNO </h2> <h3 class="h3">Siguiente cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+    data.forEach(element => speak('Su turno cita de las ' + element.hora.toString()));
 }else{
-
+    contenido_2.classList.remove('efecto_turnos');
+    contenido_2.classList.add('bg-dark');
   contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
 
 }
@@ -111,11 +117,9 @@ function speak (message) {
   var msg = new SpeechSynthesisUtterance(message);
   var voices = window.speechSynthesis.getVoices();
   msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Monica'; })[0];
-  msg.volume = 1;
-  msg.rate = 0.7;
+  msg.rate = 0.6;
   window.speechSynthesis.speak(msg);
 }
-
 
 </script>
 </body>
