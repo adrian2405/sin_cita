@@ -31,6 +31,7 @@
         ('17:00'),('17:05'),('17:10'),('17:15'),('17:20'),('17:25'),('17:30'),('17:35'),('17:40'),('17:45'),('17:50'),('17:55'),('18:00');";
 
         $result = mysqli_query($conn, $sql);
+        header("location:index.php");
     }
 
 ?>
@@ -51,31 +52,25 @@
 
 <body>
 
-    <div class="container-lg">
+    <div class="container">
 
-    <div class="row justify-content-center">
+            <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
 
-    <div class="col-12">
+            <div class="container text-center" id="alert_1"></div>
+            <div class="container text-center" id="alert_2"></div>
 
-        <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
+            <!-- Botones resetear, ir a info y refrescar -->
 
-        <div class="container text-center" id="alert_1"></div>
-        <div class="container text-center" id="alert_2"></div>
+            <form method="POST" action="" class="text-center m-3">
+            <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary m-2" />
+            <a class="btn btn-outline-info m-2" href="info.php" target="_blank"> Ir a info</a>
 
-        <!-- Botones resetear, ir a info y refrescar -->
-
-        <form method="POST" action="" class="text-center m-3">
-        <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary" />
-        <a class="btn btn-outline-info" href="info.php" target="_blank"> Ir a info</a>
-        </form>
-
-        </div>
+            </form>
 
         <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
 
-        </div>
-
     </div>
+
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
@@ -87,7 +82,7 @@
 
     var contenido = document.querySelector('#example');
 
-        var myTimer = window.setInterval(traer, 4000);
+        var myTimer = window.setInterval(traer, 3000);
     
 
             function traer(){
@@ -138,7 +133,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         </td>
 
                         <td scope="row">
-                        <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="${valor.hora}" class="btn btn-outline-secondary" value="Atender" id="btnRec2">
+                        <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec2">
                         <input type="button" onclick="delete_1(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
 
                         </form>
@@ -162,14 +157,14 @@ function delete_1 (name){
     $(document).ready(function() {
 
 $.ajax({
-				url: "borrar.php",
-				type: "POST",
-				data: {
-					name: name				
-				},
-				cache: false
+                url: "borrar.php",
+                type: "POST",
+                data: {
+                    name: name              
+                },
+                cache: false
 
-			});
+            });
 
 
 
@@ -205,14 +200,14 @@ function reception_1 (name){
 
 
             $.ajax({
-				url: "save.php",
-				type: "POST",
-				data: {
-					name: name
-				},
-				cache: false
+                url: "save.php",
+                type: "POST",
+                data: {
+                    name: name
+                },
+                cache: false
 
-			});
+            });
 
 });
 

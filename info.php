@@ -75,7 +75,7 @@ var contenido_2 = document.querySelector('#example_2');
 
                 if(data != ''){
                     data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><h2 class="h2">SU TURNO: </h2> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
-                    data.forEach(element => speak('Su turno, ' + element.hora.toString()));
+                    data.forEach(element => speak('Su turno, cita de las ' + element.hora.toString()));
                 }else{
 
                   contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
@@ -95,7 +95,7 @@ function alerta_2 (data){
 
 if(data != ''){
     data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><h2 class="h2">SU TURNO: </h2> <h3 class="h3">Atendiendo cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
-    data.forEach(element => speak('Su turno, ' + element.hora.toString()));
+    data.forEach(element => speak('Su turno, cita de las ' + element.hora.toString()));
 }else{
 
   contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
@@ -111,8 +111,11 @@ function speak (message) {
   var msg = new SpeechSynthesisUtterance(message);
   var voices = window.speechSynthesis.getVoices();
   msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Monica'; })[0];
+  msg.volume = 1;
+  msg.rate = 0.7;
   window.speechSynthesis.speak(msg);
 }
+
 
 </script>
 </body>
