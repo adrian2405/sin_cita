@@ -117,7 +117,7 @@ function speak (message) {
   var msg = new SpeechSynthesisUtterance(message);
   var voices = window.speechSynthesis.getVoices();
   msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Monica'; })[0];
-  msg.rate = 0.6;
+  msg.rate = 0.8;
   window.speechSynthesis.speak(msg);
 }
 
