@@ -24,7 +24,7 @@
         <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50 m-2 mb-4 rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="6000">
-                    <img src="./assets/img/promac.png" class="d-block w-100" alt="promac">
+                <img src="./assets/img/reparaciones.png" class="d-block w-100" alt="reparaciones">
                 </div>
                 <div class="carousel-item" data-bs-interval="8000">
                     <img src="./assets/img/icloud.png" class="d-block w-100 rounded" alt="icloud">
