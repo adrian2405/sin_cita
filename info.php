@@ -17,34 +17,33 @@
 
 <body>
 
-<h1 class="h1 text-center bg-dark text-white p-2" id="title">Citas ProMac</h1>
+<h1 class="h1 text-center bg-dark text-white p-2 mb-4" id="title">Citas ProMac</h1>
 
-    <div class="container w-100 h-50">
+    <div class="container-fluid">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade w-100 h-50 m-2 mb-4 rounded" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 mb-4 rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="6000">
-                <img src="./assets/img/reparaciones.png" class="d-block w-100" alt="reparaciones">
+                <img src="./assets/img/reparaciones.png" class="d-block w-100 h-25" alt="reparaciones">
                 </div>
                 <div class="carousel-item" data-bs-interval="8000">
-                    <img src="./assets/img/icloud.png" class="d-block w-100 rounded" alt="icloud">
+                    <img src="./assets/img/icloud.png" class="d-block w-100 h-25 rounded" alt="icloud">
                 </div>
                 <div class="carousel-item" data-bs-interval="6000">
-                    <img src="./assets/img/reparaciones.png" class="d-block w-100" alt="reparaciones">
+                    <img src="./assets/img/reparaciones.png" class="d-block w-100 h-25" alt="reparaciones">
                 </div>
             </div>
-        </div>
+        </div>    
 
         <h2 id="efecto_mensaje">Espere aqui su turno, le llamaremos enseguida.</h2>
     
-        <div class="container-fluid d-flex justify-content-center mt-5">
+        <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5">
 
-            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded" id="example"></div>
+            <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example"></div>
 
-            <div class="container w-50 p-5 m-2 bg-dark text-white text-center rounded" id="example_2"></div>
+            <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_2"></div>
 
         </div>
-
     </div>
 
     <footer class="footer mt-auto bg-dark text-center text-white fixed-bottom">
@@ -117,7 +116,7 @@ function speak (message) {
   var msg = new SpeechSynthesisUtterance(message);
   var voices = window.speechSynthesis.getVoices();
   msg.voice = speechSynthesis.getVoices().filter(function(voice) { return voice.name == 'Monica'; })[0];
-  msg.rate = 0.7;
+  msg.rate = 0.8;
   window.speechSynthesis.speak(msg);
 }
 
