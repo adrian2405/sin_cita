@@ -129,12 +129,14 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                         <form method="post">
                         <input type="button" onclick="reception_1(this.name), alertSuccess_1(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec1">
+                        <input type="button" onclick="reception_1(this.name), alertSuccess_1(this.name)" name="Sin cita" class="btn btn-outline-secondary" value="Sin cita" id="btnRec1">
                         <input type="button" onclick="delete_1(this.name), alertDanger_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar1">
                         </td>
 
                         <td scope="row">
                         <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec2">
-                        <input type="button" onclick="delete_1(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
+                        <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="Sin cita" class="btn btn-outline-secondary" value="Sin cita" id="btnRec2">
+                        <input type="button" onclick="delete_2(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
 
                         </form>
 
@@ -165,6 +167,27 @@ $.ajax({
                 cache: false
 
             });
+
+
+
+});
+
+}
+
+function delete_2 (name){
+
+
+$(document).ready(function() {
+
+$.ajax({
+            url: "borrar_2.php",
+            type: "POST",
+            data: {
+                name: name              
+            },
+            cache: false
+
+        });
 
 
 

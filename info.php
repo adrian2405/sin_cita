@@ -76,7 +76,7 @@ var contenido_2 = document.querySelector('#example_2');
                     contenido.classList.remove('bg-dark');
                     contenido.classList.add('efecto_turnos');
                     data.forEach(element => contenido.innerHTML = '<h1 class="h1 text-white">Recepción 1</h1><h2 class="h2">SU TURNO </h2> <h3 class="h3">Siguiente cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
-                    data.forEach(element => speak('Su turno cita de las ' + element.hora.toString()));
+                    data.forEach(element => speak('Su turno  ' + element.hora.toString()));
                 }else{
                     contenido.classList.remove('efecto_turnos');
                     contenido.classList.add('bg-dark');
@@ -99,7 +99,7 @@ if(data != ''){
     contenido_2.classList.remove('bg-dark');
     contenido_2.classList.add('efecto_turnos');
     data.forEach(element => contenido_2.innerHTML = '<h1 class="h1 text-white">Recepción 2</h1><h2 class="h2">SU TURNO </h2> <h3 class="h3">Siguiente cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
-    data.forEach(element => speak('Su turno cita de las ' + element.hora.toString()));
+    data.forEach(element => speak('Su turno  ' + element.hora.toString()));
 }else{
     contenido_2.classList.remove('efecto_turnos');
     contenido_2.classList.add('bg-dark');
