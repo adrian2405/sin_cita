@@ -28,7 +28,6 @@
 
     <h1 class="h1 text-center bg-dark text-white p-2 mb-4" id="title">Citas ProMac</h1>
     <div id="demo" class="visually-hidden"></div>
-    <div id="text" class="text-center"></div>
 
     <div class="container-fluid">
 
@@ -79,53 +78,73 @@
         var d = new Date();
         var t = d.toLocaleTimeString('es-ES');
         var clock = document.querySelector("#demo");
-        var text = document.querySelector("#text");
         clock.innerHTML = t;
 
-        if(t == '17:00:00'){
+        if(t == '16:19:00'){
 
-            msg.innerHTML = 'Atendiendo últimos clientes con cita previa';
+            msg.innerHTML = 'Solo clientes con cita previa';
 
-        }else if(t == '17:55:00'){
+        }else if(t == '17:49:00'){
 
             main.innerHTML = `
 
     <h1 class="h1 text-center bg-dark text-white p-2 mb-4" id="title">Citas ProMac</h1>
     <div id="demo" class="visually-hidden"></div>
-    <div id="text" class="text-center"></div>
 
     <div class="container-fluid">
-
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 mb-4 rounded" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="6000">
-                <img src="./assets/img/icloud.png" class="d-block w-100 h-25 rounded" alt="icloud">
-                </div>
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="./assets/img/sincita2.png" class="d-block w-100 h-25 rounded" alt="sincita2">
-                </div>
-                <div class="carousel-item" data-bs-interval="8000">
-                    <img src="./assets/img/sincita1.png" class="d-block w-100 h-25 rounded" alt="sincita1">
-                </div>
-            </div>
-        </div>    
 
         <h2 class="text parpadea" id="msg">Cerrado, abrimos de lunes a viernes de 9:00 a 18:00.</h2>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5">
 
-        <div class="row g-0 bg-light position-relative mb-2">
-  <div class="col-md-6 mb-md-0 p-md-4">
-    <img src="./assets/img/qr.png" class="w-100" alt="Codigo QR">
-  </div>
-  <div class="col-md-6 p-4 ps-md-0">
-    <h5 class="mt-0">Cita Previa Promac</h5>
+<div class="card mb-3 vh-50 vw-50" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="./assets/img/qr.png" class="img-fluid rounded-start" alt="Codigo QR">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+      <h5 class="mt-0">Cita Previa Promac</h5>
     <p>Puedes solicitar cita previa escaneando este código QR.</p>
+    <p>Recuerda hacer copia de seguridad antes de entregar tu dispositivo.</p>
+    <p>Uso de mascarilla obligatorio.</p>
+      </div>
+    </div>
   </div>
 </div>
 
         </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+
+    <div class="card-group col-md-10 m-2">
+  <div class="card m-1">
+    <img src="./assets/img/logo.png" width="50" height="150" class="card-img-top" alt="Copia">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card m-1">
+    <img src="./assets/img/buscar.jpeg" width="50" height="150" class="card-img-top" alt="Buscar">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+  <div class="card m-1">
+    <img src="./assets/img/revision.png" width="50" height="150" class="card-img-top" alt="Revision">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
+      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+    </div>
+  </div>
+</div>
+</div>
 
     <footer class="footer mt-auto bg-dark text-center text-white fixed-bottom">
         <div class="container">
@@ -137,7 +156,7 @@
     `;
 
 
-        }else if(t == '9:00:00'){
+        }else if(t == '16:40:00'){
             location.reload();
         }
     }
