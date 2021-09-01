@@ -11,7 +11,21 @@
 
     //Función resetear que borra la tabla y la vuelve a crear insertando de nuevo los valores
 
-    if(isset($_POST['reset'])){
+    if(isset($_POST['resetTable'])){
+
+        $delete_info = "DROP TABLE horarios_info";
+            $result_info = mysqli_query($conn, $delete_info);
+
+        $create_info = "CREATE TABLE horarios_info (id INT PRIMARY KEY AUTO_INCREMENT, hora VARCHAR(20))";
+
+        $result_info = mysqli_query($conn, $create_info);
+
+        $delete_info_2 = "DROP TABLE horarios_info_2";
+            $result_info_2 = mysqli_query($conn, $delete_info_2);
+
+        $create_info_2 = "CREATE TABLE horarios_info_2 (id INT PRIMARY KEY AUTO_INCREMENT, hora VARCHAR(20))";
+
+        $result_info_2 = mysqli_query($conn, $create_info_2);
 
             $delete = "DROP TABLE horarios";
             $result = mysqli_query($conn, $delete);
@@ -61,9 +75,9 @@
 
             <!-- Botones resetear, ir a info y refrescar -->
 
-            <form method="POST" action="" class="text-center m-3">
-            <input type="submit" name="reset" value="Resetear" class="btn btn-outline-primary m-2" />
-            <a class="btn btn-outline-info m-2" href="info.php" target="_blank"> Ir a info</a>
+            <form method="POST" action="" class="text-center m-3 p-1">
+            <input type="submit" name="resetTable" value="Resetear" class="btn btn-danger m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Resetea tabla y voces"/>
+            <!--<a class="btn btn-outline-info m-2" href="info.php" target="_blank"> Ir a info</a> -->
 
             </form>
 
@@ -283,6 +297,7 @@ function alertDanger_2 (name){
     
     `
 }
+
 
 </script>
 
