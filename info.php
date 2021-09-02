@@ -29,9 +29,9 @@
     <h1 class="h1 text-center bg-dark text-white p-2 mb-4" id="title">Citas ProMac</h1>
     <div id="demo" class="visually-hidden"></div>
 
-    <div class="container-fluid">
+    <div class="container-fluid m-2">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 mb-4 rounded" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 rounded" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="6000">
                 <img src="./assets/img/icloud.png" class="d-block w-100 h-25 rounded" alt="icloud">
@@ -45,7 +45,7 @@
             </div>
         </div>    
 
-        <h2 class="text parpadea" id="msg">Espere aqui su turno, le llamaremos enseguida</h2>
+        <h1 class="text parpadea m-2" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5 mb-2">
 
@@ -80,20 +80,21 @@
         var clock = document.querySelector("#demo");
         clock.innerHTML = t;
 
-        if(t == '16:19:00'){
+        if(t == '17:00:00'){
 
             msg.innerHTML = 'Solo clientes con cita previa';
 
-        }else if(t == '17:49:00'){
+        }else if(t == '18:00:00'){
 
             main.innerHTML = `
 
     <h1 class="h1 text-center bg-dark text-white p-2 mb-4" id="title">Citas ProMac</h1>
     <div id="demo" class="visually-hidden"></div>
 
-    <div class="container-fluid">
+    <div class="container-fluid m-2">
 
-        <h2 class="text parpadea" id="msg">Cerrado, abrimos de lunes a viernes de 9:00 a 18:00.</h2>
+        <h1 class="text parpadea m-2" id="msg">CERRADO</h1>
+        <h1 class="text parpadea m-2" id="msg">Abrimos de lunes a viernes de 9:00 a 18:00.</h1>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5">
 
@@ -106,7 +107,6 @@
       <div class="card-body">
       <h5 class="mt-0">Cita Previa Promac</h5>
     <p>Puedes solicitar cita previa escaneando este código QR.</p>
-    <p>Recuerda hacer copia de seguridad antes de entregar tu dispositivo.</p>
     <p>Uso de mascarilla obligatorio.</p>
       </div>
     </div>
@@ -116,31 +116,37 @@
         </div>
     </div>
 
-    <div class="d-flex justify-content-center">
+    <div class="d-flex justify-content-center m-2">
 
-    <div class="card-group col-md-10 m-2">
-  <div class="card m-1">
+    <div class="card-group col-md-6 m-2">
+  <div class="card m-2">
+  <div class="container">
     <img src="./assets/img/logo.png" width="50" height="150" class="card-img-top" alt="Copia">
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">Copia de seguridad</h5>
+      <p class="card-text">Recuerda realizar copia de seguridad de su dispositivo antes de entregarlo para reparación.</p>
+      <p class="card-text"><small class="text-muted">https://support.apple.com</small></p>
     </div>
   </div>
-  <div class="card m-1">
+  <div class="card m-2">
+  <div class="container">
     <img src="./assets/img/buscar.jpeg" width="50" height="150" class="card-img-top" alt="Buscar">
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">Bloqueo de activación</h5>
+      <p class="card-text">Recuerda desactivar el bloqueo de activación de su dispositivo antes de entregarlo para reparación.</p>
+      <p class="card-text"><small class="text-muted">https://support.apple.com</small></p>
     </div>
   </div>
-  <div class="card m-1">
-    <img src="./assets/img/revision.png" width="50" height="150" class="card-img-top" alt="Revision">
+  <div class="card m-2">
+  <div class="container">
+    <img src="./assets/img/revision.png" width="25" height="150" class="card-img-top" alt="Revision">
+    </div>
     <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-      <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      <h5 class="card-title">Revisión</h5>
+      <p class="card-text">Recuerda que la revisión del equipo tiene coste, consúltanos para más información.</p>
+      <p class="card-text"><small class="text-muted">Email: info@serviciospromac.com</small></p>
     </div>
   </div>
 </div>
@@ -156,7 +162,7 @@
     `;
 
 
-        }else if(t == '16:40:00'){
+        }else if(t == '9:00:00'){
             location.reload();
         }
     }
