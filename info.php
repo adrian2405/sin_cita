@@ -46,8 +46,9 @@
         </div>    
 
         <h1 class="text parpadea m-2" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
+        <h2 class="text parpadea mt-2" id="msg">Duración de la cita en función de las necesidades del cliente.</h2>
     
-        <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5 mb-2">
+        <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-3 mb-2">
 
             <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example"></div>
 
@@ -101,7 +102,7 @@
 <div class="card mb-3 vh-50 vw-50" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="./assets/img/qr.png" class="img-fluid rounded-start" alt="Codigo QR">
+      <img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=http%3A%2F%2Fhorarios.promac.es%2Fschedule%2FProMac%2FCitas_Previa_ProMac&s=6&e=m" class="img-fluid rounded-start" alt="Codigo QR">
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -118,38 +119,95 @@
 
     <div class="d-flex justify-content-center m-2">
 
-    <div class="card-group col-md-6 m-2">
-  <div class="card m-2">
-  <div class="container">
+    <div class="card m-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
     <img src="./assets/img/logo.png" width="50" height="150" class="card-img-top" alt="Copia">
     </div>
-    <div class="card-body">
+    <div class="col-md-8">
+      <div class="card-body">
       <h5 class="card-title">Copia de seguridad</h5>
       <p class="card-text">Recuerda realizar copia de seguridad de su dispositivo antes de entregarlo para reparación.</p>
-      <p class="card-text"><small class="text-muted">https://support.apple.com</small></p>
-    </div>
-  </div>
-  <div class="card m-2">
-  <div class="container">
-    <img src="./assets/img/buscar.jpeg" width="50" height="150" class="card-img-top" alt="Buscar">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Bloqueo de activación</h5>
-      <p class="card-text">Recuerda desactivar el bloqueo de activación de su dispositivo antes de entregarlo para reparación.</p>
-      <p class="card-text"><small class="text-muted">https://support.apple.com</small></p>
-    </div>
-  </div>
-  <div class="card m-2">
-  <div class="container">
-    <img src="./assets/img/revision.png" width="25" height="150" class="card-img-top" alt="Revision">
-    </div>
-    <div class="card-body">
-      <h5 class="card-title">Revisión</h5>
-      <p class="card-text">Recuerda que la revisión del equipo tiene coste, consúltanos para más información.</p>
-      <p class="card-text"><small class="text-muted">Email: info@serviciospromac.com</small></p>
+      </div>
     </div>
   </div>
 </div>
+
+<div class="card m-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+    <img src="./assets/img/buscar.jpeg" width="75" height="150" class="card-img-top" alt="Buscar">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+      <h5 class="card-title">Bloqueo de activación</h5>
+      <p class="card-text">Recuerda desactivar el bloqueo de activación de su dispositivo antes de entregarlo para reparación.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card m-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+    <img src="./assets/img/revision.png" width="25" height="150" class="card-img-top" alt="Revision">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+      <h5 class="card-title">Revisión</h5>
+      <p class="card-text">Recuerda que la revisión del equipo tiene coste, consúltanos para más información.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+<div class="d-flex justify-content-center m-2">
+
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fsupport.apple.com%2Fes-es%2Fguide%2Fiphone%2Fiph3ecf67d29%2Fios&s=6&e=m" width="50" height="150" class="card-img-top" alt="Copia">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Haz tu copia de seguridad</h5>
+  <p class="card-text">Siga estos pasos para realizar tu copia de seguridad.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fsupport.apple.com%2Fes-es%2Fguide%2Ficloud%2Fmmfc0eeddd%2Ficloud&s=6&e=m" width="50" height="150" class="card-img-top" alt="Buscar">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Desactiva el bloqueo de activación</h5>
+  <p class="card-text">Siga estos pasos para desactivar el bloqueo de activación de su equipo.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fwww.serviciospromac.com%2Finformacion-de-contacto.html&s=6&e=m" width="25" height="150" class="card-img-top" alt="Revision">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Consulta tus dudas con nosotros</h5>
+  <p class="card-text">Si tienes alguna consulta no dudes en ponerte en contacto con nosotros.</p>
+  </div>
+</div>
+</div>
+</div>
+
 </div>
 
     <footer class="footer mt-auto bg-dark text-center text-white fixed-bottom">
