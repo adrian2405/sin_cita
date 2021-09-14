@@ -22,6 +22,16 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script>
 
+    /* LINKS
+
+    https://support.apple.com/es-es/HT203977
+    https://support.apple.com/es-es/mac-backup
+    http://horarios.promac.es/schedule/ProMac/Citas_Previa_ProMac
+    https://support.apple.com/es-es/HT201441
+
+    Crear tarjetas y hacer capturas de estos links para ponerlos en el carousel
+     */
+
     var main = document.querySelector('#main');
 
     main.innerHTML = `
@@ -31,16 +41,16 @@
 
     <div class="container-fluid m-2">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 rounded" data-bs-ride="carousel">
+        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 justify-content-center" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <div class="carousel-item active" data-bs-interval="6000">
-                <img src="./assets/img/icloud.png" class="d-block w-100 h-25 rounded" alt="icloud">
+                <img src="./assets/img/cita.png" class="d-block w-50" alt="icloud">
                 </div>
                 <div class="carousel-item" data-bs-interval="7000">
-                    <img src="./assets/img/sincita2.png" class="d-block w-100 h-25 rounded" alt="sincita2">
+                    <img src="./assets/img/copia.jpeg" class="d-block w-50" alt="sincita2">
                 </div>
                 <div class="carousel-item" data-bs-interval="8000">
-                    <img src="./assets/img/sincita1.png" class="d-block w-100 h-25 rounded" alt="sincita1">
+                    <img src="./assets/img/bloqueo.jpeg" class="d-block w-50" alt="sincita1">
                 </div>
             </div>
         </div>    
