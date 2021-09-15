@@ -15,7 +15,7 @@
     <title>Información</title>
 </head>
 
-<body id="main">
+<body id="main" class="parallax">
 
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
@@ -24,10 +24,10 @@
 
     /* LINKS
 
-    https://support.apple.com/es-es/HT203977
-    https://support.apple.com/es-es/mac-backup
-    http://horarios.promac.es/schedule/ProMac/Citas_Previa_ProMac
-    https://support.apple.com/es-es/HT201441
+    Copia iPhone    https://support.apple.com/es-es/HT203977
+    Copia Mac   https://support.apple.com/es-es/mac-backup
+    Cita previa   http://horarios.promac.es/schedule/ProMac/Citas_Previa_ProMac
+    Bloqueo activación    https://support.apple.com/es-es/HT201441
 
     Crear tarjetas y hacer capturas de estos links para ponerlos en el carousel
      */
@@ -36,29 +36,33 @@
 
     main.innerHTML = `
 
-    <h1 class="h1 text-center bg-dark text-white p-2 mb-4" id="title">Citas ProMac</h1>
+    <h1 class="h1 text-center bg-dark text-white" id="title">Citas ProMac</h1>
     <div id="demo" class="visually-hidden"></div>
 
-    <div class="container-fluid m-2">
+    <div class="d-flex justify-content-center parallax">
 
-        <div id="carouselExampleSlidesOnly" class="carousel slide carousel-fade m-2 justify-content-center" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active" data-bs-interval="6000">
-                <img src="./assets/img/cita.png" class="d-block w-50" alt="icloud">
-                </div>
-                <div class="carousel-item" data-bs-interval="7000">
-                    <img src="./assets/img/copia.jpeg" class="d-block w-50" alt="sincita2">
-                </div>
-                <div class="carousel-item" data-bs-interval="8000">
-                    <img src="./assets/img/bloqueo.jpeg" class="d-block w-50" alt="sincita1">
-                </div>
-            </div>
-        </div>    
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=http%3A%2F%2Fhorarios.promac.es%2Fschedule%2FProMac%2FCitas_Previa_ProMac&s=6&e=m" width="25" height="150" class="card-img-top" alt="cita">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Solicita cita previa</h5>
+  <p class="card-text">Puedes solicitar cita previa escaneando este código QR.</p>
+  </div>
+</div>
+</div>
+</div>
 
-        <h1 class="text parpadea m-2" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
-        <h2 class="text parpadea mt-2" id="msg">Duración de la cita en función de las necesidades del cliente.</h2>
+</div> 
+        
+        <div class="container bg-light rounded-3 border border-info p-3">
+        <h1 class="text parpadea" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
+        <h2 class="text parpadea" id="msg">Duración de la cita en función de las necesidades del cliente.</h2>
+        </div>
     
-        <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-3 mb-2">
+        <div class="container-fluid d-flex justify-content-center w-100 h-100">
 
             <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example"></div>
 
@@ -66,6 +70,54 @@
 
         </div>
     </div>
+
+    <div class="d-flex justify-content-center">
+
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fsupport.apple.com%2Fes-es%2FHT203977&s=6&e=m" width="50" height="150" class="card-img-top" alt="copia">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Cómo hacer una copia de seguridad del iPhone, iPad y iPod touch</h5>
+  <p class="card-text">Siga estos pasos para realizar tu copia de seguridad.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fsupport.apple.com%2Fes-es%2Fmac-backup&s=6&e=m" width="50" height="150" class="card-img-top" alt="copiaMac">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Cómo hacer una copia de seguridad del Mac</h5>
+  <p class="card-text">Siga estos pasos para realizar tu copia de seguridad.</p>
+  </div>
+</div>
+</div>
+</div>
+
+<div class="card m-3" style="max-width: 540px;">
+<div class="row g-0">
+<div class="col-md-4">
+<img src="https://www.codigos-qr.com/qr/php/qr_img.php?d=https%3A%2F%2Fsupport.apple.com%2Fes-es%2FHT201441&s=6&e=m" width="50" height="150" class="card-img-top" alt="bloqueo">
+</div>
+<div class="col-md-8">
+  <div class="card-body">
+  <h5 class="card-title">Cómo eliminar el bloqueo de activación</h5>
+  <p class="card-text">Siga estos pasos para desactivar el bloqueo de activación de su equipo.</p>
+  </div>
+</div>
+</div>
+</div>
+
+</div>    
+
+
 
     <footer class="footer mt-auto bg-dark text-center text-white fixed-bottom">
         <div class="container">
@@ -104,8 +156,10 @@
 
     <div class="container-fluid m-2">
 
+        <div class="container bg-light rounded-3 border border-info p-3">
         <h1 class="text parpadea m-2" id="msg">CERRADO</h1>
         <h1 class="text parpadea m-2" id="msg">Abrimos de lunes a viernes de 9:00 a 18:00.</h1>
+        </div>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5">
 
