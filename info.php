@@ -22,16 +22,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <script>
 
-    /* LINKS
-
-    Copia iPhone    https://support.apple.com/es-es/HT203977
-    Copia Mac   https://support.apple.com/es-es/mac-backup
-    Cita previa   http://horarios.promac.es/schedule/ProMac/Citas_Previa_ProMac
-    Bloqueo activación    https://support.apple.com/es-es/HT201441
-
-    Crear tarjetas y hacer capturas de estos links para ponerlos en el carousel
-     */
-
     var main = document.querySelector('#main');
 
     main.innerHTML = `
