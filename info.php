@@ -107,6 +107,10 @@
 
 </div>    
 
+<div class="container bg-light rounded-3 border border-info p-3">
+        <h1 class="text parpadea" id="msg">Antes de llevarse su equipo, pruébelo sin compromiso.</h1>
+        </div>
+
 
 
     <footer class="footer mt-auto bg-dark text-center text-white fixed-bottom">
@@ -135,6 +139,7 @@
 
         if(t == '17:00:00'){
 
+            msg.classList.add('display-1')
             msg.innerHTML = 'Solo clientes con cita previa';
 
         }else if(t == '18:00:00'){
@@ -297,7 +302,7 @@
                 }else{
                     contenido.classList.remove('efecto_turnos');
                     contenido.classList.add('bg-dark');
-                  contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
+                  contenido.innerHTML = '<h1 class="h1">Recepción 1</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><h3>Recuerde entregar su dispositivo sin información.</h3>';
 
                 }
             }
@@ -320,7 +325,7 @@
                 }else{
                     contenido_2.classList.remove('efecto_turnos');
                     contenido_2.classList.add('bg-dark');
-                    contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><p>Recuerde haber realizado copia de seguridad anteriormente.</p>';
+                    contenido_2.innerHTML = '<h1 class="h1">Recepción 2</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><h3>Recuerde entregar su dispositivo sin información.</h3>';
 
                 }
             }
