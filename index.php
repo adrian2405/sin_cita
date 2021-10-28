@@ -64,7 +64,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
-<body>
+<body id="body">
 
     <div class="container">
 
@@ -77,11 +77,17 @@
 
             <form method="POST" action="" class="text-center m-3 p-1">
             <input type="submit" name="resetTable" value="Resetear" class="btn btn-danger m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Resetea tabla y voces"/>
+            <button type="button" class="btn btn-secondary" disabled>Modo Claro / Oscuro</button>
+            <label class="switch">
+                <input type="checkbox" id="checkbox1">
+                <span class="slider round"></span>
+            </label>
+            
             <!--<a class="btn btn-outline-info m-2" href="info.php" target="_blank"> Ir a info</a> -->
 
             </form>
 
-        <table class="table table-bordered table-hover border-dark text-center" id="example"></table>
+        <table class="table table-bordered table-hover border-dark text-dark text-center" id="example"></table>
 
     </div>
 
@@ -124,9 +130,9 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                 contenido.innerHTML = `<thead>
                             <tr>
-                            <th scope="col">Citas</th>
-                            <th scope="col">Recepción 1</th>
-                            <th scope="col">Recepción 2</th>
+                            <th scope="col" class="h2">Citas</th>
+                            <th scope="col" class="h2">Recepción 1</th>
+                            <th scope="col" class="h2">Recepción 2</th>
                             </tr>
                         </thead>`
 
@@ -143,13 +149,13 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                         <form method="post">
                         <input type="button" onclick="reception_1(this.name), alertSuccess_1(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec1">
-                        <input type="button" onclick="reception_1(this.name), alertSuccess_1(this.name)" name="Sin cita" class="btn btn-outline-secondary" value="Sin cita" id="btnRec1">
+                        <input type="button" onclick="reception_1(this.name), alertSuccess_1(this.name)" name="Sin cita" class="btn btn-outline-dark" value="Sin cita" id="btnRec1">
                         <input type="button" onclick="delete_1(this.name), alertDanger_1(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar1">
                         </td>
 
                         <td scope="row">
                         <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec2">
-                        <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="Sin cita" class="btn btn-outline-secondary" value="Sin cita" id="btnRec2">
+                        <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="Sin cita" class="btn btn-outline-dark" value="Sin cita" id="btnRec2">
                         <input type="button" onclick="delete_2(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
 
                         </form>
@@ -296,6 +302,46 @@ function alertDanger_2 (name){
     </div>
     
     `
+}
+
+function darkMode(){
+
+    var body = document.querySelector('#body');
+    var title = document.querySelector('#title');
+    var table = document.querySelector('#example');
+
+    body.classList.add('bg-dark');
+    title.classList.replace('bg-dark', 'bg-secondary');
+    title.classList.replace('text-white', 'text-dark');
+    table.classList.add('bg-secondary');
+    
+
+}
+
+function lightMode(){
+
+    var body = document.querySelector('#body');
+    var title = document.querySelector('#title');
+    var table = document.querySelector('#example');
+
+    body.classList.remove('bg-dark');
+    title.classList.replace('bg-secondary', 'bg-dark');
+    title.classList.replace('text-dark', 'text-white');
+    table.classList.remove('bg-secondary');
+
+
+}
+
+var checkbox = document.getElementById('checkbox1');
+checkbox.addEventListener("change", validaCheckbox, false);
+function validaCheckbox()
+{
+  var checked = checkbox.checked;
+  if(checked){
+    darkMode();
+  }else{
+      lightMode();
+  }
 }
 
 
