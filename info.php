@@ -58,6 +58,8 @@
 
             <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_2"></div>
 
+            <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_3"></div>
+
         </div>
     </div>
 
@@ -125,10 +127,12 @@
 
     var contenido = document.querySelector('#example');
     var contenido_2 = document.querySelector('#example_2');
+    var contenido_3 = document.querySelector('#example_3');
     var msg = document.querySelector('#msg');
 
     var myTimer = window.setInterval(traer, 10000);
     var myTimer_2 = window.setInterval(traer_2, 11000);
+    var myTimer_4 = window.setInterval(traer_3, 12000);
     var myVar = setInterval(myTimer_3, 1000);
 
     function myTimer_3() {
@@ -154,6 +158,8 @@
         <div class="container bg-light rounded-3 border border-info p-3">
         <h1 class="text parpadea m-2" id="msg">CERRADO</h1>
         <h1 class="text parpadea m-2" id="msg">Abrimos de lunes a viernes de 9:00 a 18:00.</h1>
+        <h1 class="text parpadea m-2" id="msg">HORARIO DE NAVIDAD.</h1>
+        <h1 class="text parpadea m-2" id="msg">Días 24, 31 de Diciembre y 5 de Enero de 9:00 a 14:00.</h1>
         </div>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5">
@@ -330,9 +336,34 @@
                 }
             }
 
+            function traer_3(){
+
+fetch('./data_info_3.php')
+.then(res => res.json())
+.then(data => {alerta_3(data)});
+
+}
+
+function alerta_3 (data){
+
+if(data != ''){
+    contenido_3.classList.remove('bg-dark');
+    contenido_3.classList.add('efecto_turnos');
+    data.forEach(element => contenido_3.innerHTML = '<h1 class="h1 text-white">Recepción 3</h1><h2 class="h2">SU TURNO </h2> <h3 class="h3">Siguiente cita: ' + element.hora.toString() + '</h3><p>Recuerde haber realizado copia de seguridad anteriormente.</p>');
+    data.forEach(element => speak('Su turno  ' + element.hora.toString()));
+}else{
+    contenido_3.classList.remove('efecto_turnos');
+    contenido_3.classList.add('bg-dark');
+    contenido_3.innerHTML = '<h1 class="h1">Recepción 3</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><h3>Recuerde entregar su dispositivo sin información.</h3>';
+
+}
+}
+
 traer();
 
 traer_2();
+
+traer_3();
 
 function speak (message) {
   var msg = new SpeechSynthesisUtterance(message);

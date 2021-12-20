@@ -27,6 +27,13 @@
 
         $result_info_2 = mysqli_query($conn, $create_info_2);
 
+        $delete_info_3 = "DROP TABLE horarios_info_3";
+            $result_info_3 = mysqli_query($conn, $delete_info_3);
+
+        $create_info_3 = "CREATE TABLE horarios_info_3 (id INT PRIMARY KEY AUTO_INCREMENT, hora VARCHAR(20))";
+
+        $result_info_3 = mysqli_query($conn, $create_info_3);
+
             $delete = "DROP TABLE horarios";
             $result = mysqli_query($conn, $delete);
 
@@ -72,6 +79,7 @@
 
             <div class="container text-center" id="alert_1"></div>
             <div class="container text-center" id="alert_2"></div>
+            <div class="container text-center" id="alert_3"></div>
 
             <!-- Botones resetear, ir a info y refrescar -->
 
@@ -133,6 +141,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                             <th scope="col" class="h2">Citas</th>
                             <th scope="col" class="h2">Recepción 1</th>
                             <th scope="col" class="h2">Recepción 2</th>
+                            <th scope="col" class="h2">Recepción 3</th>
                             </tr>
                         </thead>`
 
@@ -157,10 +166,17 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec2">
                         <input type="button" onclick="reception_2(this.name), alertSuccess_2(this.name)" name="Sin cita" class="btn btn-outline-dark" value="Sin cita" id="btnRec2">
                         <input type="button" onclick="delete_2(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
+                        </td>
+
+                        <td scope="row">
+                        <input type="button" onclick="reception_3(this.name), alertSuccess_3(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec3">
+                        <input type="button" onclick="reception_3(this.name), alertSuccess_3(this.name)" name="Sin cita" class="btn btn-outline-dark" value="Sin cita" id="btnRec3">
+                        <input type="button" onclick="delete_3(this.name), alertDanger_3(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar3">
+                        </td>
 
                         </form>
 
-                        </td>
+                        
                        
                         </tr>
 
@@ -215,6 +231,27 @@ $.ajax({
 
 }
 
+function delete_3 (name){
+
+
+$(document).ready(function() {
+
+$.ajax({
+            url: "borrar_3.php",
+            type: "POST",
+            data: {
+                name: name              
+            },
+            cache: false
+
+        });
+
+
+
+});
+
+}
+
 
 function reception_2 (name){
 
@@ -228,6 +265,25 @@ $.ajax({
         name: name
     },
     cache: false
+
+});
+
+});
+
+}
+
+function reception_3 (name){
+
+$(document).ready(function() {
+
+
+$.ajax({
+url: "save_3.php",
+type: "POST",
+data: {
+    name: name
+},
+cache: false
 
 });
 
@@ -280,6 +336,18 @@ function alertSuccess_2 (name){
     `
 }
 
+function alertSuccess_3 (name){
+    var scc = document.getElementById('alert_3');
+    scc.innerHTML = `
+    
+    <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert" id="alert3">
+    Recepción 3 ha llamado a cita: `+name+`.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    `
+}
+
 function alertDanger_1 (name){
     var scc = document.getElementById('alert_1');
     scc.innerHTML = `
@@ -298,6 +366,18 @@ function alertDanger_2 (name){
     
     <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert2">
     Recepción 2 ha eliminado a cita: `+name+`.
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    
+    `
+}
+
+function alertDanger_3 (name){
+    var scc = document.getElementById('alert_3');
+    scc.innerHTML = `
+    
+    <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert3">
+    Recepción 3 ha eliminado a cita: `+name+`.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
