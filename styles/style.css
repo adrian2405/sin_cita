@@ -136,3 +136,311 @@
       border-radius: 50%;
     }
     
+    /* Simple SVG Christmas Lights Animation */
+
+
+
+#Christmas_Lights {
+  height: 100%;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  z-index: 1000
+}
+
+.light_cord {
+  fill: none;
+  stroke: #174700;
+}
+
+.light_fixture {
+  fill: #134413;
+}
+
+.red_bulb {
+  fill: #CA2128;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.green_bulb {
+  fill: #2D754A;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.blue_bulb {
+  fill: #2C3EA8;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.white_bulb {
+  fill: #F5EED7;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+.gold_bulb {
+  fill: #ffcc5e;
+  stroke: #6D6D6D;
+  stroke-miterlimit: 10;
+}
+
+
+/* Simply changing the opacity of the SVG fill to create the glow effect for the bulbs */
+
+.bulb {
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-name: glow;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+  animation-name: glow;
+  animation-duration: 0.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  animation-direction: alternate;
+}
+
+@-webkit-keyframes glow {
+  0% {
+    fill-opacity: 0.25;
+  }
+  100% {
+    fill-opacity: 1
+  }
+}
+
+@keyframes glow {
+  0% {
+    fill-opacity: 0.25;
+  }
+  100% {
+    fill-opacity: 1.0
+  }
+}
+
+
+/* Made a set of ten animation delays to create a more random effect of lights blinking.  Simplest way without jumping through SVG hoops. */
+
+.blink-1 {
+  -webkit-animation-delay: 0.6s;
+  animation-delay: 0.6s;
+}
+
+.blink-2 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.blink-3 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.blink-4 {
+  -webkit-animation-delay: 6s;
+  animation-delay: 6s;
+}
+
+.blink-5 {
+  -webkit-animation-delay: 2.5s;
+  animation-delay: 2.5s;
+}
+
+.blink-6 {
+  -webkit-animation-delay: .3s;
+  animation-delay: .3s;
+}
+
+.blink-7 {
+  -webkit-animation-delay: 2s;
+  animation-delay: 2s;
+}
+
+.blink-8 {
+  -webkit-animation-delay: .2s;
+  animation-delay: .2s;
+}
+
+.blink-9 {
+  -webkit-animation-delay: 0.95s;
+  animation-delay: 0.95s;
+}
+
+.blink-10 {
+  -webkit-animation-delay: 1.2s;
+  animation-delay: 1.2s;
+}
+
+/* MUÑECO DE NIEVE */
+
+.snowman_body {
+  fill: #F5ECC3;
+  -webkit-animation: body-drop 0.5s ease-in forwards;
+}
+
+.scarf {
+  fill: #EF3C3C;
+  opacity: 0;
+  -webkit-animation: scale 0.5s ease 1s forwards;
+  -webkit-transform-origin: 55px 165px;
+}
+
+.scarf_knot{
+  fill: #EF3C3C;
+   opacity: 0;
+  -webkit-animation: scale 0.3s ease 1.5s forwards;
+  -webkit-transform-origin: 92px 190px;
+}
+
+.snowman_head {
+  fill: #F5ECC3;
+  -webkit-transform: translateY(-303px);
+  -webkit-animation: body-drop 0.5s ease-in 0.2s forwards;
+}
+
+#hat {
+  -webkit-transform: translateY(-303px);
+  -webkit-animation: body-drop 0.5s ease-in 0.3s forwards;
+}
+
+.hat-top {
+  fill: #5B4831;
+}
+
+.hat-ribbon {
+  fill: #EF3C3C;
+}
+
+.hat-bottom {
+  fill: #5B4831;
+}
+
+.nose {
+  fill: #EF3C3C;
+  opacity: 0;
+  -webkit-animation: scale 0.3s ease 2.5s forwards;
+  -webkit-transform-origin: 104px 142px;
+}
+
+.mouth-1 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.1s forwards;
+  -webkit-transform-origin: 82px 156px;
+}
+
+.mouth-2 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.2s forwards;
+  -webkit-transform-origin: 86px 162px;
+}
+
+.mouth-3 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.3s forwards;
+  -webkit-transform-origin: 92px 167px;
+}
+
+.mouth-4 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.4s forwards;
+  -webkit-transform-origin: 98px 169px;
+}
+
+.mouth-5 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.5s forwards;
+  -webkit-transform-origin: 106px 171px;
+}
+
+.mouth-6 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.6s forwards;
+  -webkit-transform-origin: 113px 171px;
+}
+
+.mouth-7 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.7s forwards;
+  -webkit-transform-origin: 120px 171px;
+}
+
+.mouth-8 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.8s forwards;
+  -webkit-transform-origin: 127px 169px;
+}
+
+.mouth-9 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 3.9s forwards;
+  -webkit-transform-origin: 132px 165px;
+}
+
+.mouth-10 {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.1s ease 4.0s forwards;
+  -webkit-transform-origin: 137px 160px;
+}
+
+.eye_left {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.2s ease 2.7s forwards;
+  -webkit-transform-origin: 92px 122px;
+}
+
+.eye_right {
+  fill: #5B4831;
+  opacity: 0;
+  -webkit-animation: scale 0.2s ease 2.9s forwards;
+  -webkit-transform-origin: 125px 120px;
+}
+
+.button_top {
+  fill: #09B0A6;
+  opacity: 0;
+  -webkit-animation: scale 0.3s ease 2.2s forwards;
+  -webkit-transform-origin: 132px 217px;
+}
+
+.button_bottom {
+  fill: #09B0A6;
+  opacity: 0;
+  -webkit-animation: scale 0.3s ease 2s forwards;
+  -webkit-transform-origin: 132px 252px;
+}
+
+@-webkit-keyframes body-drop {
+  0% {
+      -webkit-transform: translateY(-303px);
+  }
+  
+  100% {
+      -webkit-transform: translateY(0px);
+  }
+}
+
+@-webkit-keyframes scale {
+  0% {
+      opacity: 1;
+      -webkit-transform: scale(0,0);
+  }
+  
+  100% {
+      opacity: 1;
+      -webkit-transform: scale(1,1);
+  }
+}
