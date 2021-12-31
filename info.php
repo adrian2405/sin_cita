@@ -132,7 +132,7 @@
 
             <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_2"></div>
 
-            <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_3"></div>
+            <!--<div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_3"></div>-->
 
         </div>
     </div>
@@ -311,7 +311,7 @@
             msg.classList.add('display-1')
             msg.innerHTML = 'Solo clientes con cita previa';
 
-        }else if(t == '17:21:00'){
+        }else if(t == '14:00:00'){
 
             main.innerHTML = `
             <svg id="Christmas_Lights" viewBox="0 0 612 792">
@@ -662,7 +662,7 @@
                 }
             }
 
-            function traer_3(){
+            /*function traer_3(){
 
 fetch('./data_info_3.php')
 .then(res => res.json())
@@ -683,13 +683,13 @@ if(data != ''){
     contenido_3.innerHTML = '<h1 class="h1">Recepción 3</h1><br><h2 class="h2">Espere su turno por favor.</h2><br><h3>Recuerde entregar su dispositivo sin información.</h3>';
 
 }
-}
+}*/
 
 traer();
 
 traer_2();
 
-traer_3();
+//traer_3();
 
 function speak (message) {
   var msg = new SpeechSynthesisUtterance(message);

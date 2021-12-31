@@ -141,7 +141,7 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                             <th scope="col" class="h2">Citas</th>
                             <th scope="col" class="h2">Recepción 1</th>
                             <th scope="col" class="h2">Recepción 2</th>
-                            <th scope="col" class="h2">Recepción 3</th>
+                            <!--<th scope="col" class="h2">Recepción 3</th>-->
                             </tr>
                         </thead>`
 
@@ -168,11 +168,11 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         <input type="button" onclick="delete_2(this.name), alertDanger_2(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar2">
                         </td>
 
-                        <td scope="row">
+                        <!--<td scope="row">
                         <input type="button" onclick="reception_3(this.name), alertSuccess_3(this.name)" name="${valor.hora}" class="btn btn-outline-dark" value="Atender" id="btnRec3">
                         <input type="button" onclick="reception_3(this.name), alertSuccess_3(this.name)" name="Sin cita" class="btn btn-outline-dark" value="Sin cita" id="btnRec3">
                         <input type="button" onclick="delete_3(this.name), alertDanger_3(this.name)" name="${valor.hora}" class="btn btn-outline-danger" value="Eliminar" id="btnEliminar3">
-                        </td>
+                        </td>-->
 
                         </form>
 
