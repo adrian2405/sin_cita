@@ -292,12 +292,12 @@
 
     var contenido = document.querySelector('#example');
     var contenido_2 = document.querySelector('#example_2');
-    var contenido_3 = document.querySelector('#example_3');
+    //var contenido_3 = document.querySelector('#example_3');
     var msg = document.querySelector('#msg');
 
     var myTimer = window.setInterval(traer, 10000);
     var myTimer_2 = window.setInterval(traer_2, 11000);
-    var myTimer_4 = window.setInterval(traer_3, 12000);
+    //var myTimer_4 = window.setInterval(traer_3, 12000);
     var myVar = setInterval(myTimer_3, 1000);
 
     function myTimer_3() {
