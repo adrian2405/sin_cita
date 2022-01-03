@@ -311,7 +311,7 @@
             msg.classList.add('display-1')
             msg.innerHTML = 'Solo clientes con cita previa';
 
-        }else if(t == '14:00:00'){
+        }else if(t == '18:00:00'){
 
             main.innerHTML = `
             <svg id="Christmas_Lights" viewBox="0 0 612 792">
