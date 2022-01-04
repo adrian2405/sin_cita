@@ -124,7 +124,6 @@
         <div class="container bg-light rounded-3 border border-info p-3">
         <h1 class="text parpadea" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
         <h2 class="text parpadea" id="msg">Duración de la cita en función de las necesidades del cliente.</h2>
-        <h2 class="text parpadea" id="fecha"></h2>
         </div>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100">
