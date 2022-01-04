@@ -124,6 +124,7 @@
         <div class="container bg-light rounded-3 border border-info p-3">
         <h1 class="text parpadea" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
         <h2 class="text parpadea" id="msg">Duración de la cita en función de las necesidades del cliente.</h2>
+        <h2 class="text parpadea" id="fecha"></h2>
         </div>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100">
@@ -131,6 +132,7 @@
             <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example"></div>
 
             <div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_2"></div>
+
 
             <!--<div class="container p-5 m-2 bg-dark text-white text-center rounded" id="example_3"></div>-->
 
@@ -294,6 +296,7 @@
     var contenido_2 = document.querySelector('#example_2');
     //var contenido_3 = document.querySelector('#example_3');
     var msg = document.querySelector('#msg');
+    var fecha = document.querySelector('#fecha');
 
     var myTimer = window.setInterval(traer, 10000);
     var myTimer_2 = window.setInterval(traer_2, 11000);
@@ -306,12 +309,12 @@
         var clock = document.querySelector("#demo");
         clock.innerHTML = t;
 
-        if(t == '17:00:00'){
+        if((t == '13:00:00' && today == '05/01/2022') || (t == '17:00:00' && today != '05/01/2022')){
 
             msg.classList.add('display-1')
             msg.innerHTML = 'Solo clientes con cita previa';
 
-        }else if(t == '18:00:00'){
+        }else if((t == '14:00:00' && today == '05/01/2022') || (t == '18:00:00' && today != '05/01/2022')){
 
             main.innerHTML = `
             <svg id="Christmas_Lights" viewBox="0 0 612 792">
@@ -698,6 +701,23 @@ function speak (message) {
   msg.rate = 0.8;
   window.speechSynthesis.speak(msg);
 }
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth() + 1; //January is 0!
+var yyyy = today.getFullYear();
+
+if (dd < 10) {
+  dd = '0' + dd;
+}
+
+if (mm < 10) {
+  mm = '0' + mm;
+}
+
+today = dd + '/' + mm + '/' + yyyy;
+document.write(today);
+fecha.innerHTML = today;
 
 </script>
 
