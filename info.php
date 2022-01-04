@@ -124,6 +124,7 @@
         <div class="container bg-light rounded-3 border border-info p-3">
         <h1 class="text parpadea" id="msg">Espere aqui su turno, le llamaremos enseguida</h1>
         <h2 class="text parpadea" id="msg">Duración de la cita en función de las necesidades del cliente.</h2>
+        <h2 class="text parpadea" id="fecha"></h2>
         </div>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100">
@@ -613,7 +614,7 @@
     `;
 
 
-        }else if(t == '9:00:00'){
+        }else if((t == '9:00:00' && dayOfWeek != 'Sabado') && (t == '9:00:00' && dayOfWeek != 'Domingo') && (t == '9:00:00' && today != '06/01/2022')){
             location.reload();
         }
     }
@@ -716,7 +717,21 @@ if (mm < 10) {
 
 today = dd + '/' + mm + '/' + yyyy;
 document.write(today);
-fecha.innerHTML = today;
+
+
+var objToday = new Date(),
+	weekday = new Array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'),
+	dayOfWeek = weekday[objToday.getDay()],
+	domEnder = function() { var a = objToday; if (/1/.test(parseInt((a + "").charAt(0)))) return "th"; a = parseInt((a + "").charAt(1)); return 1 == a ? "st" : 2 == a ? "nd" : 3 == a ? "rd" : "th" }(),
+	dayOfMonth = today + ( objToday.getDate() < 10) ? '0' + objToday.getDate() + domEnder : objToday.getDate() + domEnder,
+	months = new Array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'),
+	curMonth = months[objToday.getMonth()],
+	curYear = objToday.getFullYear(),
+	curHour = objToday.getHours() > 12 ? objToday.getHours() - 12 : (objToday.getHours() < 10 ? "0" + objToday.getHours() : objToday.getHours()),
+	curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
+	curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
+	curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
+    fecha.innerHTML = dayOfWeek;
 
 </script>
 
