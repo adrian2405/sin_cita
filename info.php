@@ -308,12 +308,12 @@
         var clock = document.querySelector("#demo");
         clock.innerHTML = t;
 
-        if((t == '13:00:00' && today == '05/01/2022') || (t == '17:00:00' && today != '05/01/2022')){
+        if(t == '17:00:00'){
 
             msg.classList.add('display-1')
             msg.innerHTML = 'Solo clientes con cita previa';
 
-        }else if((t == '14:00:00' && today == '05/01/2022') || (t == '18:00:00' && today != '05/01/2022')){
+        }else if(t == '18:00:00'){
 
             main.innerHTML = `
             <svg id="Christmas_Lights" viewBox="0 0 612 792">
@@ -399,8 +399,6 @@
 
         <h1 class="text parpadea m-2" id="msg">CERRADO</h1>
         <h1 class="text parpadea m-2" id="msg">Abrimos de lunes a viernes de 9:00 a 18:00.</h1>
-        <h1 class="text parpadea m-2" id="msg">HORARIO DE NAVIDAD.</h1>
-        <h1 class="text parpadea m-2" id="msg">Días 24, 31 de Diciembre y 5 de Enero de 9:00 a 14:00.</h1>
         </div>
     
         <div class="container-fluid d-flex justify-content-center w-100 h-100 mt-5">
@@ -613,7 +611,7 @@
     `;
 
 
-        }else if((t == '9:00:00' && dayOfWeek != 'Sabado') && (t == '9:00:00' && dayOfWeek != 'Domingo') && (t == '9:00:00' && today != '06/01/2022')){
+        }else if((t == '9:00:00' && dayOfWeek != 'Sabado') && (t == '9:00:00' && dayOfWeek != 'Domingo')){
             location.reload();
         }
     }
@@ -701,6 +699,8 @@ function speak (message) {
   window.speechSynthesis.speak(msg);
 }
 
+// Método para filtrar por fecha en formato dd/mm/aaaa
+
 var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth() + 1; //January is 0!
@@ -717,6 +717,7 @@ if (mm < 10) {
 today = dd + '/' + mm + '/' + yyyy;
 document.write(today);
 
+// Método para filtrar por día de la semana
 
 var objToday = new Date(),
 	weekday = new Array('Domingo', 'Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado'),
