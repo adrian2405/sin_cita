@@ -75,25 +75,35 @@
 
     <div class="container">
 
-            <h1 class="h1 text-center bg-dark text-white p-4" id="title">Citas ProMac</h1>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white" id="title">
+  <div class="container-fluid">
+    <h1 class="h1">Citas Promac</h1>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Menú
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item"><form method="POST" action="">
+            <input type="submit" name="resetTable" value="Resetear tabla" title="Resetea tabla y voces" class="btn btn-secondary"/> 
+            </form></a></li>
+            <li><a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-circle-half m-2" viewBox="0 0 16 16">
+  <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
+</svg><label class="switch"><input type="checkbox" id="checkbox1"><span class="slider round"></span></label></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
             <div class="container text-center" id="alert_1"></div>
             <div class="container text-center" id="alert_2"></div>
             <div class="container text-center" id="alert_3"></div>
-
-            <!-- Botones resetear, ir a info y refrescar -->
-
-            <form method="POST" action="" class="text-center m-3 p-1">
-            <input type="submit" name="resetTable" value="Resetear" class="btn btn-danger m-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Resetea tabla y voces"/>
-            <button type="button" class="btn btn-secondary" disabled>Modo Claro / Oscuro</button>
-            <label class="switch">
-                <input type="checkbox" id="checkbox1">
-                <span class="slider round"></span>
-            </label>
-            
-            <!--<a class="btn btn-outline-info m-2" href="info.php" target="_blank"> Ir a info</a> -->
-
-            </form>
 
         <table class="table table-bordered table-hover border-dark text-dark text-center" id="example"></table>
 
