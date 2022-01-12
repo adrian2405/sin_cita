@@ -65,71 +65,86 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
     <title>Panel de control</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 </head>
 
 <body id="body">
 
     <div class="container">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white" id="title">
-  <div class="container-fluid">
-    <h1 class="h1">Citas Promac</h1>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
-      <ul class="navbar-nav">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Menú
-          </a>
-          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
-            <li><a class="dropdown-item"><form method="POST" action="">
-            <input type="submit" name="resetTable" value="Resetear tabla" title="Resetea tabla y voces" class="btn btn-secondary"/> 
-            </form></a></li>
-            <li><a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-circle-half m-2" viewBox="0 0 16 16">
-  <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-</svg><label class="switch"><input type="checkbox" id="checkbox1"><span class="slider round"></span></label></a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white" id="title">
+            <div class="container-fluid">
+                <h1 class="h1">Citas Promac</h1>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarNavDarkDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Menú
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+                                <li><a class="dropdown-item">
+                                        <form method="POST" action="">
+                                            <input type="submit" name="resetTable" value="Resetear tabla"
+                                                title="Resetea tabla y voces" class="btn btn-secondary" />
+                                        </form>
+                                    </a></li>
+                                <li><a class="dropdown-item"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                                            height="32" fill="currentColor" class="bi bi-circle-half m-2"
+                                            viewBox="0 0 16 16">
+                                            <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+                                        </svg><label class="switch"><input type="checkbox" id="checkbox1"><span
+                                                class="slider round"></span></label></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-            <div class="container text-center" id="alert_1"></div>
-            <div class="container text-center" id="alert_2"></div>
-            <div class="container text-center" id="alert_3"></div>
+        <div class="container text-center" id="alert_1"></div>
+        <div class="container text-center" id="alert_2"></div>
+        <div class="container text-center" id="alert_3"></div>
 
         <table class="table table-bordered table-hover border-dark text-dark text-center" id="example"></table>
 
     </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+        integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"
+        integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous">
+    </script>
 
 </body>
 
 <script>
-    
+var contenido = document.querySelector('#example');
 
-    var contenido = document.querySelector('#example');
+var myTimer = window.setInterval(traer, 3000);
 
-        var myTimer = window.setInterval(traer, 3000);
-    
 
-            function traer(){
+function traer() {
 
-                fetch('./data.php')
-                .then(res => res.json())
-                .then(data => {tabla(data)});
+    fetch('./data.php')
+        .then(res => res.json())
+        .then(data => {
+            tabla(data)
+        });
 
-            }
+}
 
 
 /***************
@@ -143,10 +158,10 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
  */
 
-            function tabla (data){
+function tabla(data) {
 
 
-                contenido.innerHTML = `<thead>
+    contenido.innerHTML = `<thead>
                             <tr>
                             <th scope="col" class="h2">Citas</th>
                             <th scope="col" class="h2">Recepción 1</th>
@@ -156,9 +171,9 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
                         </thead>`
 
 
-                for(let valor of data){
+    for (let valor of data) {
 
-                        contenido.innerHTML += `
+        contenido.innerHTML += `
 
                         <tbody>
                         <tr>
@@ -192,44 +207,44 @@ CADA FUNCION OBTIENE LA HORA A LA QUE HACE REFERENCIA ESE BOTON POR EL ATRIBUTO 
 
                         `;
 
-                }//FIN BUCLE
+    } //FIN BUCLE
 
-            }//FIN METODO
+} //FIN METODO
 
 traer();
 
 
-function delete_1 (name){
+function delete_1(name) {
 
 
     $(document).ready(function() {
 
-$.ajax({
-                url: "borrar.php",
-                type: "POST",
-                data: {
-                    name: name              
-                },
-                cache: false
+        $.ajax({
+            url: "borrar.php",
+            type: "POST",
+            data: {
+                name: name
+            },
+            cache: false
 
-            });
+        });
 
 
 
-});
+    });
 
 }
 
-function delete_2 (name){
+function delete_2(name) {
 
 
-$(document).ready(function() {
+    $(document).ready(function() {
 
-$.ajax({
+        $.ajax({
             url: "borrar_2.php",
             type: "POST",
             data: {
-                name: name              
+                name: name
             },
             cache: false
 
@@ -237,20 +252,20 @@ $.ajax({
 
 
 
-});
+    });
 
 }
 
-function delete_3 (name){
+function delete_3(name) {
 
 
-$(document).ready(function() {
+    $(document).ready(function() {
 
-$.ajax({
+        $.ajax({
             url: "borrar_3.php",
             type: "POST",
             data: {
-                name: name              
+                name: name
             },
             cache: false
 
@@ -258,143 +273,143 @@ $.ajax({
 
 
 
-});
+    });
 
 }
 
 
-function reception_2 (name){
+function reception_2(name) {
 
     $(document).ready(function() {
 
 
-$.ajax({
-    url: "save_2.php",
-    type: "POST",
-    data: {
-        name: name
-    },
-    cache: false
+        $.ajax({
+            url: "save_2.php",
+            type: "POST",
+            data: {
+                name: name
+            },
+            cache: false
 
-});
+        });
 
-});
-
-}
-
-function reception_3 (name){
-
-$(document).ready(function() {
-
-
-$.ajax({
-url: "save_3.php",
-type: "POST",
-data: {
-    name: name
-},
-cache: false
-
-});
-
-});
+    });
 
 }
 
+function reception_3(name) {
 
-function reception_1 (name){
+    $(document).ready(function() {
+
+
+        $.ajax({
+            url: "save_3.php",
+            type: "POST",
+            data: {
+                name: name
+            },
+            cache: false
+
+        });
+
+    });
+
+}
+
+
+function reception_1(name) {
 
 
     $(document).ready(function() {
 
 
-            $.ajax({
-                url: "save.php",
-                type: "POST",
-                data: {
-                    name: name
-                },
-                cache: false
+        $.ajax({
+            url: "save.php",
+            type: "POST",
+            data: {
+                name: name
+            },
+            cache: false
 
-            });
+        });
 
-});
+    });
 
 }
 
-function alertSuccess_1 (name){
+function alertSuccess_1(name) {
     var scc = document.getElementById('alert_1');
     scc.innerHTML = `
     
     <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert" id="alert1">
-        Recepción 1 ha llamado a cita: `+name+`.
+        Recepción 1 ha llamado a cita: ` + name + `.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
 }
 
-function alertSuccess_2 (name){
+function alertSuccess_2(name) {
     var scc = document.getElementById('alert_2');
     scc.innerHTML = `
     
     <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert" id="alert2">
-    Recepción 2 ha llamado a cita: `+name+`.
+    Recepción 2 ha llamado a cita: ` + name + `.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
 }
 
-function alertSuccess_3 (name){
+function alertSuccess_3(name) {
     var scc = document.getElementById('alert_3');
     scc.innerHTML = `
     
     <div class="alert alert-success alert-dismissible fade show fw-bold" role="alert" id="alert3">
-    Recepción 3 ha llamado a cita: `+name+`.
+    Recepción 3 ha llamado a cita: ` + name + `.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
 }
 
-function alertDanger_1 (name){
+function alertDanger_1(name) {
     var scc = document.getElementById('alert_1');
     scc.innerHTML = `
     
     <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert1">
-        Recepción 1 ha eliminado a cita: `+name+`.
+        Recepción 1 ha eliminado a cita: ` + name + `.
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
 }
 
-function alertDanger_2 (name){
+function alertDanger_2(name) {
     var scc = document.getElementById('alert_2');
     scc.innerHTML = `
     
     <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert2">
-    Recepción 2 ha eliminado a cita: `+name+`.
+    Recepción 2 ha eliminado a cita: ` + name + `.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
 }
 
-function alertDanger_3 (name){
+function alertDanger_3(name) {
     var scc = document.getElementById('alert_3');
     scc.innerHTML = `
     
     <div class="alert alert-danger alert-dismissible fade show fw-bold" role="alert" id="balert3">
-    Recepción 3 ha eliminado a cita: `+name+`.
+    Recepción 3 ha eliminado a cita: ` + name + `.
     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     
     `
 }
 
-function darkMode(){
+function darkMode() {
 
     var body = document.querySelector('#body');
     var title = document.querySelector('#title');
@@ -404,11 +419,11 @@ function darkMode(){
     title.classList.replace('bg-dark', 'bg-secondary');
     title.classList.replace('text-white', 'text-dark');
     table.classList.add('bg-secondary');
-    
+
 
 }
 
-function lightMode(){
+function lightMode() {
 
     var body = document.querySelector('#body');
     var title = document.querySelector('#title');
@@ -424,17 +439,15 @@ function lightMode(){
 
 var checkbox = document.getElementById('checkbox1');
 checkbox.addEventListener("change", validaCheckbox, false);
-function validaCheckbox()
-{
-  var checked = checkbox.checked;
-  if(checked){
-    darkMode();
-  }else{
-      lightMode();
-  }
+
+function validaCheckbox() {
+    var checked = checkbox.checked;
+    if (checked) {
+        darkMode();
+    } else {
+        lightMode();
+    }
 }
-
-
 </script>
 
 </html>
