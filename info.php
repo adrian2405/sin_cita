@@ -297,6 +297,8 @@
 
         } else if ((t == '9:00:00' && dayOfWeek != 'Sabado') && (t == '9:00:00' && dayOfWeek != 'Domingo')) {
             location.reload();
+        }else if(t == '9:00:00' && dayOfWeek == 'Lunes'){
+            location.reload();
         }
     }
 
