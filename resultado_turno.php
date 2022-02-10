@@ -8,6 +8,14 @@ if (!isset($_SESSION["turno"])){
     $_SESSION["turno"]++;
 }
 
+date_default_timezone_set("America/New York");
+
+if(date('G') == 8){
+
+    $_SESSION["turno"] = 1;
+
+}
+
 ?>
 
 
