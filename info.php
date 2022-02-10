@@ -296,9 +296,9 @@
 
 
         } else if ((t == '9:00:00' && dayOfWeek != 'Sabado') && (t == '9:00:00' && dayOfWeek != 'Domingo')) {
-            location.reload();
+            location.reload(true);
         }else if(t == '9:00:00' && dayOfWeek == 'Lunes'){
-            location.reload();
+            location.reload(true);
         }
     }
 
@@ -443,7 +443,7 @@ if(data != ''){
 
     // Efecto Nieve
 
-    var snowStorm = function(e, d) {
+    /*var snowStorm = function(e, d) {
         function g(a, d) {
             isNaN(d) && (d = 0);
             return Math.random() * a + d
@@ -761,7 +761,7 @@ if(data != ''){
         a.events.add(e, "load", r, false);
         return this
     }(window, document);
-    //]]>
+    //]]>*/
     </script>
 </body>
 
