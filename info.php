@@ -295,11 +295,11 @@
     `;
 
 
-        } else if (t === '9:00:00' && dayOfWeek === 'Lunes') {
+        /*} else if (t === '9:00:00' && dayOfWeek === 'Lunes') {
             location.reload(true);
         }else if ((t === '9:00:00' && dayOfWeek !== 'Sabado') && (t === '9:00:00' && dayOfWeek !== 'Domingo')){
             location.reload(true);
-        }
+        }*/
     }
 
     function traer() {
@@ -437,10 +437,6 @@ if(data != ''){
         curMinute = objToday.getMinutes() < 10 ? "0" + objToday.getMinutes() : objToday.getMinutes(),
         curSeconds = objToday.getSeconds() < 10 ? "0" + objToday.getSeconds() : objToday.getSeconds(),
         curMeridiem = objToday.getHours() > 12 ? "PM" : "AM";
-
-    </script>
-
-    <script type="text/javascript">
 
     // Efecto Nieve
 
